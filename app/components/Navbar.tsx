@@ -170,7 +170,9 @@ export default function Navbar() {
               }`}
             >
               <a
-                href="#"
+                href="https://web.facebook.com/profile.php?id=61591142784305"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="transition-colors duration-200 text-white/50 hover:text-brand"
                 aria-label="Facebook"
               >
@@ -183,7 +185,9 @@ export default function Navbar() {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://instagram.com/calderon_group"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="transition-colors duration-200 text-white/50 hover:text-brand"
                 aria-label="Instagram"
               >
@@ -196,7 +200,9 @@ export default function Navbar() {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://www.tiktok.com/@calderon_gruop_sac"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="transition-colors duration-200 text-white/50 hover:text-brand"
                 aria-label="TikTok"
               >
@@ -384,7 +390,9 @@ export default function Navbar() {
         <div className="absolute bottom-0 left-0 right-0 border-t border-white/5">
           <div className="flex items-center justify-center gap-4 py-4">
             <a
-              href="#"
+              href="https://web.facebook.com/profile.php?id=61591142784305"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-gray-500 hover:text-brand transition-colors duration-200"
               aria-label="Facebook"
             >
@@ -393,7 +401,9 @@ export default function Navbar() {
               </svg>
             </a>
             <a
-              href="#"
+              href="https://instagram.com/calderon_group"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-gray-500 hover:text-brand transition-colors duration-200"
               aria-label="Instagram"
             >
@@ -402,7 +412,9 @@ export default function Navbar() {
               </svg>
             </a>
             <a
-              href="#"
+              href="https://www.tiktok.com/@calderon_gruop_sac"
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-gray-500 hover:text-brand transition-colors duration-200"
               aria-label="TikTok"
             >

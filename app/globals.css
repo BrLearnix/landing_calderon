@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-brand: #EAB308;
-  --color-brand-dark: #CA8A04;
-  --color-brand-light: #FDE047;
-  --color-brand-50: #FEFCE8;
+  --color-brand: #fed310;
+  --color-brand-dark: #d4b000;
+  --color-brand-light: #fee44a;
+  --color-brand-50: #fffde8;
   --color-surface: #F3F4F6;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -51,6 +51,23 @@ html {
 
 .animate-marquee:hover {
   animation-play-state: paused;
+}
+
+@keyframes chat-bubble {
+  0% { opacity: 0; transform: translateX(20px) scale(0.9); }
+  50% { opacity: 1; transform: translateX(-2px) scale(1.02); }
+  70% { transform: translateX(1px) scale(0.99); }
+  100% { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes chat-glow {
+  0%, 100% { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1); }
+  50% { box-shadow: 0 4px 14px -1px rgba(234,179,8,0.2), 0 2px 8px -2px rgba(234,179,8,0.15); }
+}
+
+.animate-chat-bubble {
+  animation: chat-bubble 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both,
+             chat-glow 3s ease-in-out 1.2s infinite;
 }
 
 body {
