@@ -246,16 +246,16 @@ export default function Home() {
       </section>
 
       {/* Proyectos Section */}
-      <section id="proyectos" className="py-20 sm:py-28 bg-white">
+      <section id="proyectos" className="py-20 sm:py-28 bg-[#1a1a2e]">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <div className="text-center mb-16">
             <span className="inline-block text-xs uppercase tracking-[0.25em] text-brand font-semibold mb-4">
               Nuestro Trabajo
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4">
               Proyectos Recientes
             </h2>
-            <p className="text-gray-500 max-w-xl mx-auto">
+            <p className="text-gray-400 max-w-xl mx-auto">
               Conoce algunos de los proyectos que hemos realizado para nuestros
               clientes.
             </p>
@@ -408,6 +408,51 @@ export default function Home() {
                 className="grayscale opacity-80 hover:opacity-100 hover:grayscale-0 transition-all duration-500"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Proveedores Section */}
+      <section className="relative py-16 overflow-hidden bg-[#0f0f1a] border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 mb-12">
+          <div className="text-center mb-8">
+            <span className="inline-block text-xs uppercase tracking-[0.25em] text-brand font-semibold mb-4">
+              Proveedores
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
+              Trabajamos con las <span className="text-brand">mejores marcas</span>
+            </h2>
+          </div>
+        </div>
+        <div className="max-w-7xl mx-auto overflow-hidden">
+          <div className="flex animate-marquee items-center">
+            {(() => {
+              const logos = [
+                "/img/proveedores/logo1.png",
+                "/img/proveedores/logo2.png",
+                "/img/proveedores/logo3.png",
+                "/img/proveedores/logo4.png",
+              ];
+              const repeat = 6;
+              return Array.from({ length: logos.length * repeat }).map((_, i) => {
+                const src = logos[i % logos.length];
+                return (
+                  <div key={i} className="shrink-0 mx-8 sm:mx-16 lg:mx-24 flex items-center justify-center">
+                    <div className="w-28 h-28 sm:w-36 sm:h-36 flex items-center justify-center animate-spin-logo"
+                      style={{ animationDelay: `${i * 0.3}s` }}
+                    >
+                      <Image
+                        src={src}
+                        alt="Proveedor"
+                        width={80}
+                        height={80}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                  </div>
+                );
+              });
+            })()}
           </div>
         </div>
       </section>
