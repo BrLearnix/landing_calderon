@@ -305,10 +305,10 @@ export default function Home() {
               Contacto
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4">
-              Estamos aquí para <span className="text-brand">ayudarte</span>
+              Pide tu cotización <span className="text-brand">sin compromiso</span>
             </h2>
             <p className="text-gray-400 max-w-xl mx-auto">
-              Visítanos, llámanos o escríbenos. Te atenderemos personalmente.
+              Cuéntanos tu proyecto y te enviaremos un presupuesto personalizado a la brevedad.
             </p>
           </div>
 
