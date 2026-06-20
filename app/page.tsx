@@ -158,7 +158,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="text-center lg:text-left pt-20 lg:pt-0">
               <span className="inline-block text-xs uppercase tracking-[0.25em] text-brand font-semibold mb-6">
-                Expertos en Instalaciones
+                Expertos en Pvc y Aluminio
               </span>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.08] tracking-tight mb-6">
                 Transformamos
@@ -204,11 +204,17 @@ export default function Home() {
               <div className="relative w-full max-w-lg">
                 <div className="absolute -inset-4 bg-gradient-to-br from-brand/20 to-transparent rounded-3xl blur-2xl opacity-60" />
                 <Image
-                  src="/img/modelo1.png"
+                  src="/img/modelo2.png"
                   alt="Calderón Instalaciones"
                   width={600}
                   height={700}
-                  className="relative w-full h-auto object-contain drop-shadow-2xl"
+                  className="relative w-full h-auto object-contain drop-shadow-2xl animate-float"
+                  style={{
+                    maskImage:
+                      "linear-gradient(to bottom, black 40%, transparent 100%)",
+                    WebkitMaskImage:
+                      "linear-gradient(to bottom, black 40%, transparent 100%)",
+                  }}
                   priority
                 />
               </div>
