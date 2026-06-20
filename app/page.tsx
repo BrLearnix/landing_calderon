@@ -124,8 +124,28 @@ const fortalezas = [
   },
 ];
 
+const projects = [
+  { src: "/img/projects/project1.jpeg", label: "Ventanas en serie" },
+  { src: "/img/projects/project2.jpg", label: "Acero inoxidable" },
+  { src: "/img/projects/project3.jpg", label: "Puerta de ducha" },
+  { src: "/img/projects/project4.jpg", label: "ventanas en serie" },
+  { src: "/img/projects/project5.jpg", label: "Puerta de ducha" },
+  { src: "/img/projects/project6.jpg", label: "Ventanas en serie" },
+  { src: "/img/projects/project7.jpg", label: "Pvc Termoestatico" },
+  { src: "/img/projects/project8.jpg", label: "Puerta de Ducha" },
+  { src: "/img/projects/project9.jpg", label: "Acero inoxidable" },
+];
+
+const perPage = 6;
+const projectPages: { src: string; label: string }[][] = [];
+for (let i = 0; i < projects.length; i += perPage) {
+  projectPages.push(projects.slice(i, i + perPage));
+}
+
 export default function Home() {
   const [current, setCurrent] = useState(0);
+  const [projPage, setProjPage] = useState(0);
+  const [selectedProj, setSelectedProj] = useState<number | null>(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -133,6 +153,19 @@ export default function Home() {
     }, 6000);
     return () => clearInterval(timer);
   }, []);
+
+  useEffect(() => {
+    if (selectedProj === null) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedProj(null);
+      if (e.key === "ArrowRight")
+        setSelectedProj((selectedProj + 1) % projects.length);
+      if (e.key === "ArrowLeft")
+        setSelectedProj((selectedProj - 1 + projects.length) % projects.length);
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [selectedProj]);
 
   return (
     <>
@@ -360,7 +393,7 @@ export default function Home() {
                 <div className="flex-shrink-0">
                   <div className="w-96 h-96 sm:w-[28rem] sm:h-[28rem] rounded-[2rem] overflow-hidden animate-float">
                     <Image
-                      src="/img/about/modelo1.png"
+                      src="/img/about/modelo3.avif"
                       alt="Calderón Instalaciones"
                       width={600}
                       height={600}
@@ -420,23 +453,21 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { label: "Aluminio", color: "bg-brand" },
-              { label: "PVC", color: "bg-blue-500" },
-              { label: "Acero Inoxidable", color: "bg-gray-500" },
-              { label: "Puerta de Ducha", color: "bg-teal-500" },
-              { label: "Aluminio", color: "bg-brand" },
-              { label: "PVC", color: "bg-blue-500" },
-            ].map((proj, i) => (
+          {/* Mobile: all projects stacked vertically */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:hidden">
+            {projects.map((proj, i) => (
               <div
                 key={i}
-                className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100 cursor-pointer"
+                onClick={() => setSelectedProj(i)}
+                className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-gray-800 cursor-pointer"
               >
-                <div
-                  className={`absolute inset-0 ${proj.color} opacity-10 group-hover:opacity-20 transition-opacity duration-300`}
+                <Image
+                  src={proj.src}
+                  alt={`Proyecto de ${proj.label}`}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-5">
                   <span className="inline-block px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white bg-brand/80 rounded-full mb-2">
                     {proj.label}
@@ -464,6 +495,118 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Desktop: carousel with 6 visible at a time */}
+          <div className="hidden lg:block overflow-hidden">
+            <div
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${projPage * 100}%)` }}
+            >
+              {projectPages.map((group, gi) => (
+                <div
+                  key={gi}
+                  className="grid grid-cols-3 gap-6 min-w-0 w-full shrink-0"
+                >
+                  {group.map((proj, i) => (
+                    <div
+                      key={i}
+                      onClick={() => setSelectedProj(gi * perPage + i)}
+                      className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-gray-800 cursor-pointer"
+                    >
+                      <Image
+                        src={proj.src}
+                        alt={`Proyecto de ${proj.label}`}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                      <div className="absolute bottom-0 left-0 right-0 p-5">
+                        <span className="inline-block px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white bg-brand/80 rounded-full mb-2">
+                          {proj.label}
+                        </span>
+                        <h3 className="text-white font-semibold text-sm">
+                          Proyecto de {proj.label}
+                        </h3>
+                      </div>
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                          <svg
+                            className="w-5 h-5 text-white"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+          {/* Desktop pagination controls */}
+          <div className="hidden lg:flex items-center justify-center gap-4 mt-8">
+            <button
+              onClick={() => setProjPage(Math.max(0, projPage - 1))}
+              disabled={projPage === 0}
+              className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            >
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+            <div className="flex gap-2">
+              {projectPages.map((_, gi) => (
+                <button
+                  key={gi}
+                  onClick={() => setProjPage(gi)}
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                    gi === projPage
+                      ? "bg-brand w-6"
+                      : "bg-white/30 hover:bg-white/50"
+                  }`}
+                />
+              ))}
+            </div>
+            <button
+              onClick={() =>
+                setProjPage(Math.min(projectPages.length - 1, projPage + 1))
+              }
+              disabled={projPage === projectPages.length - 1}
+              className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            >
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
           </div>
         </div>
       </section>
@@ -682,6 +825,97 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Lightbox modal */}
+      {selectedProj !== null && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+          onClick={() => setSelectedProj(null)}
+        >
+          <button
+            onClick={() => setSelectedProj(null)}
+            className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-10"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setSelectedProj(
+                (selectedProj - 1 + projects.length) % projects.length,
+              );
+            }}
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-10"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+          </button>
+
+          <div
+            className="relative max-w-5xl max-h-[85vh] w-full h-full mx-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={projects[selectedProj].src}
+              alt={`Proyecto de ${projects[selectedProj].label}`}
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
+
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setSelectedProj((selectedProj + 1) % projects.length);
+            }}
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-10"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
+
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 px-4 py-2 rounded-full text-white text-sm">
+            {selectedProj + 1} / {projects.length} &mdash;{" "}
+            {projects[selectedProj].label}
+          </div>
+        </div>
+      )}
     </>
   );
 }
