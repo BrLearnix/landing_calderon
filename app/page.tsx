@@ -393,7 +393,7 @@ export default function Home() {
                 <div className="flex-shrink-0">
                   <div className="w-96 h-96 sm:w-[28rem] sm:h-[28rem] rounded-[2rem] overflow-hidden animate-float">
                     <Image
-                      src="/img/about/modelo3.avif"
+                      src="/img/about/modelo4.jpg"
                       alt="Calderón Instalaciones"
                       width={600}
                       height={600}
@@ -442,10 +442,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <div className="text-center mb-16">
             <span className="inline-block text-xs uppercase tracking-[0.25em] text-brand font-semibold mb-4">
-              Nuestro Trabajo
+              Proyectos
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4">
-              Proyectos Recientes
+              Nuestros Trabajos <span className="text-brand">recientes</span>
             </h2>
             <p className="text-gray-400 max-w-xl mx-auto">
               Conoce algunos de los proyectos que hemos realizado para nuestros
