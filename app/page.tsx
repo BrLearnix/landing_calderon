@@ -7,6 +7,10 @@ const backgrounds = [
   "/img/backgrounds/background1.jpg",
   "/img/backgrounds/background2.jpg",
   "/img/backgrounds/background3.jpg",
+  "/img/backgrounds/background4.jpg",
+  "/img/backgrounds/background5.jpg",
+  "/img/backgrounds/background6.jpg",
+  "/img/backgrounds/background7.jpg",
 ];
 
 const fortalezas = [
@@ -269,7 +273,10 @@ export default function Home() {
       </section>
 
       {/* Nosotros Section */}
-      <section id="nosotros" className="py-20 sm:py-28 bg-[#f8f8fc] relative overflow-hidden">
+      <section
+        id="nosotros"
+        className="py-20 sm:py-28 bg-[#f8f8fc] relative overflow-hidden"
+      >
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand/5 rounded-full -translate-y-1/3 translate-x-1/3 blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand/[0.03] rounded-full translate-y-1/3 -translate-x-1/4 blur-3xl pointer-events-none" />
 
@@ -283,10 +290,12 @@ export default function Home() {
               <span className="text-brand">compromiso</span>
             </h2>
             <p className="text-gray-500 leading-relaxed max-w-3xl mx-auto">
-              En <strong className="text-gray-700">Calderón Instalaciones</strong> somos una empresa
-              especializada en la instalación de carpintería metálica y PVC.
-              Con más de 15 años de trayectoria, nos hemos consolidado como un
-              referente de calidad, profesionalismo y confianza en el sector.
+              En{" "}
+              <strong className="text-gray-700">Calderón Instalaciones</strong>{" "}
+              somos una empresa especializada en la instalación de carpintería
+              metálica y PVC. Con más de 15 años de trayectoria, nos hemos
+              consolidado como un referente de calidad, profesionalismo y
+              confianza en el sector.
             </p>
           </div>
 
@@ -305,18 +314,22 @@ export default function Home() {
                     Experiencia y trayectoria
                   </h3>
                   <p className="text-gray-500 leading-relaxed mb-4">
-                    Desde nuestros inicios, en <strong className="text-gray-700">Calderón Instalaciones</strong> nos
-                    hemos dedicado con pasión y profesionalismo a cada proyecto.
-                    Nuestra trayectoria de más de 15 años nos avala, respaldada
-                    por cientos de clientes satisfechos que confían en nuestro
-                    trabajo.
+                    Desde nuestros inicios, en{" "}
+                    <strong className="text-gray-700">
+                      Calderón Instalaciones
+                    </strong>{" "}
+                    nos hemos dedicado con pasión y profesionalismo a cada
+                    proyecto. Nuestra trayectoria de más de 15 años nos avala,
+                    respaldada por cientos de clientes satisfechos que confían
+                    en nuestro trabajo.
                   </p>
                   <p className="text-gray-500 leading-relaxed mb-8">
                     Hemos participado en proyectos residenciales, comerciales e
                     industriales, desarrollando una amplia experiencia en
-                    instalaciones de aluminio, PVC termoestático, acero inoxidable
-                    y puertas de ducha. Cada obra ejecutada es un testimonio de
-                    nuestro compromiso con la calidad y el detalle.
+                    instalaciones de aluminio, PVC termoestático, acero
+                    inoxidable y puertas de ducha. Cada obra ejecutada es un
+                    testimonio de nuestro compromiso con la calidad y el
+                    detalle.
                   </p>
                   <div className="grid grid-cols-3 gap-6 sm:gap-8">
                     {[
@@ -324,11 +337,16 @@ export default function Home() {
                       { number: "500+", label: "Proyectos completados" },
                       { number: "98%", label: "Clientes satisfechos" },
                     ].map((stat) => (
-                      <div key={stat.label} className="text-center lg:text-left">
+                      <div
+                        key={stat.label}
+                        className="text-center lg:text-left"
+                      >
                         <p className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-brand to-brand/70 bg-clip-text text-transparent">
                           {stat.number}
                         </p>
-                        <p className="text-xs text-gray-500 mt-1">{stat.label}</p>
+                        <p className="text-xs text-gray-500 mt-1">
+                          {stat.label}
+                        </p>
                       </div>
                     ))}
                   </div>
@@ -359,8 +377,8 @@ export default function Home() {
                 Proveer soluciones integrales en carpintería metálica y PVC,
                 ofreciendo instalaciones de alta calidad que superen las
                 expectativas de nuestros clientes, mediante un equipo
-                profesional comprometido con la excelencia, la innovación
-                y el servicio personalizado.
+                profesional comprometido con la excelencia, la innovación y el
+                servicio personalizado.
               </p>
             </div>
 
@@ -371,8 +389,8 @@ export default function Home() {
               </div>
               <p className="text-gray-500 leading-relaxed">
                 Ser reconocidos como la empresa líder en instalaciones de
-                carpintería metálica y PVC en la región, destacando por
-                nuestra calidad, responsabilidad y capacidad de innovación,
+                carpintería metálica y PVC en la región, destacando por nuestra
+                calidad, responsabilidad y capacidad de innovación,
                 contribuyendo al desarrollo y bienestar de nuestra comunidad.
               </p>
             </div>
@@ -641,9 +659,7 @@ export default function Home() {
                       key={i}
                       className="shrink-0 mx-8 sm:mx-16 lg:mx-24 flex items-center justify-center"
                     >
-                      <div
-                        className="w-28 h-28 sm:w-36 sm:h-36 flex items-center justify-center"
-                      >
+                      <div className="w-28 h-28 sm:w-36 sm:h-36 flex items-center justify-center">
                         <Image
                           src={src}
                           alt="Proveedor"
