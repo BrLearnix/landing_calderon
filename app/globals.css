@@ -67,18 +67,18 @@ html {
   50% { box-shadow: 0 4px 14px -1px rgba(234,179,8,0.18), 0 2px 8px -2px rgba(234,179,8,0.12); }
 }
 
-@keyframes spin-logo {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.animate-spin-logo {
-  animation: spin-logo 8s linear infinite;
-}
-
 .animate-chat-bubble {
   animation: chat-bubble 14s ease-in-out 0.5s infinite,
              chat-glow 3s ease-in-out 1.5s infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
 
 body {

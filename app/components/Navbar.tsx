@@ -14,8 +14,8 @@ const menuItems = [
       { label: "Puerta de Ducha", href: "/servicios/puerta-de-ducha" },
     ],
   },
-  { label: "Nosotros", href: "/#nosotros" },
   { label: "Proyectos", href: "/#proyectos" },
+  { label: "Nosotros", href: "/#nosotros" },
 ];
 
 export default function Navbar() {

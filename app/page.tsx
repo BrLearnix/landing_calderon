@@ -269,78 +269,112 @@ export default function Home() {
       </section>
 
       {/* Nosotros Section */}
-      <section id="nosotros" className="py-20 sm:py-28 bg-[#f8f8fc]">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div>
-              <span className="inline-block text-xs uppercase tracking-[0.25em] text-brand font-semibold mb-4">
-                Sobre Nosotros
-              </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight mb-6">
-                Más de 15 años de{" "}
-                <span className="text-brand">experiencia</span> y confianza
-              </h2>
-              <p className="text-gray-500 leading-relaxed mb-6">
-                En Calderón Instalaciones nos dedicamos a la instalación de
-                carpintería metálica y PVC. Trabajamos con materiales de la más
-                alta calidad para garantizar resultados duraderos y estéticos.
-              </p>
-              <p className="text-gray-500 leading-relaxed mb-8">
-                Nuestro equipo altamente capacitado se encarga de cada proyecto
-                con profesionalismo, puntualidad y atención personalizada,
-                asegurando que cada detalle supere tus expectativas.
-              </p>
-              <div className="grid grid-cols-3 gap-6">
-                {[
-                  { number: "15+", label: "Años de experiencia" },
-                  { number: "500+", label: "Proyectos completados" },
-                  { number: "98%", label: "Clientes satisfechos" },
-                ].map((stat) => (
-                  <div key={stat.label}>
-                    <p className="text-2xl sm:text-3xl font-bold text-brand">
-                      {stat.number}
-                    </p>
-                    <p className="text-xs text-gray-500 mt-1">{stat.label}</p>
-                  </div>
-                ))}
+      <section id="nosotros" className="py-20 sm:py-28 bg-[#f8f8fc] relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand/5 rounded-full -translate-y-1/3 translate-x-1/3 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand/[0.03] rounded-full translate-y-1/3 -translate-x-1/4 blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative">
+          <div className="text-center mb-20">
+            <span className="inline-block text-xs uppercase tracking-[0.25em] text-brand font-semibold mb-4">
+              Sobre Nosotros
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight mb-6">
+              Nuestra empresa, nuestro{" "}
+              <span className="text-brand">compromiso</span>
+            </h2>
+            <p className="text-gray-500 leading-relaxed max-w-3xl mx-auto">
+              En <strong className="text-gray-700">Calderón Instalaciones</strong> somos una empresa
+              especializada en la instalación de carpintería metálica y PVC.
+              Con más de 15 años de trayectoria, nos hemos consolidado como un
+              referente de calidad, profesionalismo y confianza en el sector.
+            </p>
+          </div>
+
+          {/* Trayectoria */}
+          <div className="mb-20">
+            <div className="relative bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-gray-100 overflow-hidden">
+              <div className="absolute -right-8 -top-8 text-[180px] font-bold text-brand/[0.04] leading-none select-none pointer-events-none hidden sm:block">
+                15+
               </div>
-            </div>
-            <div className="relative">
-              <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-brand/20 to-brand/5 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <svg
-                    className="w-16 h-16 text-brand/40 mx-auto mb-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1}
-                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    />
-                  </svg>
-                  <p className="text-sm text-gray-400">
-                    Nuestro equipo en acción
+              <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center relative z-10">
+                <div className="flex-1">
+                  <div className="flex items-center gap-4 mb-5">
+                    <span className="h-px flex-1 bg-gradient-to-r from-transparent via-brand/30 to-transparent hidden sm:block" />
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 tracking-tight mb-4 text-center sm:text-left">
+                    Experiencia y trayectoria
+                  </h3>
+                  <p className="text-gray-500 leading-relaxed mb-4">
+                    Desde nuestros inicios, en <strong className="text-gray-700">Calderón Instalaciones</strong> nos
+                    hemos dedicado con pasión y profesionalismo a cada proyecto.
+                    Nuestra trayectoria de más de 15 años nos avala, respaldada
+                    por cientos de clientes satisfechos que confían en nuestro
+                    trabajo.
                   </p>
+                  <p className="text-gray-500 leading-relaxed mb-8">
+                    Hemos participado en proyectos residenciales, comerciales e
+                    industriales, desarrollando una amplia experiencia en
+                    instalaciones de aluminio, PVC termoestático, acero inoxidable
+                    y puertas de ducha. Cada obra ejecutada es un testimonio de
+                    nuestro compromiso con la calidad y el detalle.
+                  </p>
+                  <div className="grid grid-cols-3 gap-6 sm:gap-8">
+                    {[
+                      { number: "15+", label: "Años de experiencia" },
+                      { number: "500+", label: "Proyectos completados" },
+                      { number: "98%", label: "Clientes satisfechos" },
+                    ].map((stat) => (
+                      <div key={stat.label} className="text-center lg:text-left">
+                        <p className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-brand to-brand/70 bg-clip-text text-transparent">
+                          {stat.number}
+                        </p>
+                        <p className="text-xs text-gray-500 mt-1">{stat.label}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="flex-shrink-0">
+                  <div className="w-96 h-96 sm:w-[28rem] sm:h-[28rem] rounded-[2rem] overflow-hidden animate-float">
+                    <Image
+                      src="/img/about/modelo1.png"
+                      alt="Calderón Instalaciones"
+                      width={600}
+                      height={600}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
               </div>
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-brand rounded-2xl flex items-center justify-center shadow-lg shadow-brand/30">
-                <svg
-                  className="w-10 h-10 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                  />
-                </svg>
+            </div>
+          </div>
+
+          {/* Misión y Visión */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="group relative bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand to-brand/60" />
+              <div className="text-center mb-5">
+                <h3 className="text-xl font-bold text-gray-900">Misión</h3>
               </div>
+              <p className="text-gray-500 leading-relaxed">
+                Proveer soluciones integrales en carpintería metálica y PVC,
+                ofreciendo instalaciones de alta calidad que superen las
+                expectativas de nuestros clientes, mediante un equipo
+                profesional comprometido con la excelencia, la innovación
+                y el servicio personalizado.
+              </p>
+            </div>
+
+            <div className="group relative bg-white rounded-3xl p-8 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand to-brand/60" />
+              <div className="text-center mb-5">
+                <h3 className="text-xl font-bold text-gray-900">Visión</h3>
+              </div>
+              <p className="text-gray-500 leading-relaxed">
+                Ser reconocidos como la empresa líder en instalaciones de
+                carpintería metálica y PVC en la región, destacando por
+                nuestra calidad, responsabilidad y capacidad de innovación,
+                contribuyendo al desarrollo y bienestar de nuestra comunidad.
+              </p>
             </div>
           </div>
         </div>
@@ -608,8 +642,7 @@ export default function Home() {
                       className="shrink-0 mx-8 sm:mx-16 lg:mx-24 flex items-center justify-center"
                     >
                       <div
-                        className="w-28 h-28 sm:w-36 sm:h-36 flex items-center justify-center animate-spin-logo"
-                        style={{ animationDelay: `${i * 0.3}s` }}
+                        className="w-28 h-28 sm:w-36 sm:h-36 flex items-center justify-center"
                       >
                         <Image
                           src={src}
