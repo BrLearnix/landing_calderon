@@ -513,8 +513,7 @@ export default function Home() {
               <span className="text-brand">compromiso</span>
             </h2>
             <p className="text-gray-500 leading-relaxed max-w-3xl mx-auto">
-              En{" "}
-              <strong className="text-gray-700">Calderon Group S.A.C</strong>{" "}
+              En <strong className="text-gray-700">Calderon Group S.A.C</strong>{" "}
               somos una empresa especializada en la instalación de carpintería
               metálica y PVC. Con más de 10 años de trayectoria, nos hemos
               consolidado como un referente de calidad, profesionalismo y

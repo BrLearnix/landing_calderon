@@ -1,11 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
-
-const images = [
-  { src: "/img/services/acero/img1.jpg", alt: "Acero Inoxidable 1" },
-  { src: "/img/services/acero/img2.jpg", alt: "Acero Inoxidable 2" },
-  { src: "/img/services/acero/img3.jpg", alt: "Acero Inoxidable 3" },
-];
+import ImageGallery from "@/app/components/ImageGallery";
 
 export default function AceroPage() {
   return (
@@ -58,31 +52,12 @@ export default function AceroPage() {
             </div>
           </div>
 
-          <div className="space-y-4">
-            <div className="aspect-[4/3] rounded-2xl bg-gray-800 border border-white/10 shadow-sm overflow-hidden relative">
-              <Image
-                src={images[0].src}
-                alt={images[0].alt}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </div>
-
-            <div className="grid grid-cols-3 gap-4">
-              {images.slice(1).map((img, i) => (
-                <div key={i} className="aspect-square rounded-xl bg-gray-800 border border-white/10 shadow-sm overflow-hidden relative">
-                  <Image
-                    src={img.src}
-                    alt={img.alt}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 33vw, 20vw"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+          <ImageGallery
+            mainImage="/img/services/acero/img1.jpg"
+            thumbnails={["modelo.jpg", "img2.jpg", "img3.jpg"].map((s) => `/img/services/acero/${s}`)}
+            extraImages={[]}
+            alt="Acero Inoxidable"
+          />
         </div>
       </div>
     </div>
