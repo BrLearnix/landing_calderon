@@ -162,6 +162,7 @@ export default function Home() {
   const [current, setCurrent] = useState(0);
   const [projPage, setProjPage] = useState(0);
   const [selectedProj, setSelectedProj] = useState<number | null>(null);
+  const [showAllMobile, setShowAllMobile] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -345,7 +346,7 @@ export default function Home() {
 
           {/* Mobile: all projects stacked vertically */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:hidden">
-            {projects.map((proj, i) => (
+            {(showAllMobile ? projects : projects.slice(0, 4)).map((proj, i) => (
               <div
                 key={i}
                 onClick={() => setSelectedProj(i)}
@@ -382,6 +383,16 @@ export default function Home() {
                 </div>
               </div>
             ))}
+            {!showAllMobile && projects.length > 4 && (
+              <div className="col-span-full flex justify-center mt-2">
+                <button
+                  onClick={() => setShowAllMobile(true)}
+                  className="px-6 py-2.5 rounded-xl border border-dashed border-white/20 text-sm text-gray-400 hover:text-brand hover:border-brand/40 transition-all duration-200 font-medium"
+                >
+                  + Ver más proyectos
+                </button>
+              </div>
+            )}
           </div>
 
           {/* Desktop: carousel with 6 visible at a time */}
