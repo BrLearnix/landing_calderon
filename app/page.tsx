@@ -207,7 +207,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="text-center lg:text-left pt-20 lg:pt-0">
               <span className="inline-block text-xs uppercase tracking-[0.25em] text-brand font-semibold mb-6">
-                Expertos en Pvc y Aluminio
+                Expertos en instalaciones metálicas, vidrio y PVC
               </span>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.08] tracking-tight mb-6">
                 Transformamos
@@ -217,9 +217,9 @@ export default function Home() {
                 con <span className="text-brand">calidad</span>
               </h1>
               <p className="text-base sm:text-lg text-gray-400 max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
-                Aluminio, PVC termoestático, acero inoxidable y puertas de
-                ducha. Más de 10 años de experiencia brindando soluciones
-                duraderas y elegantes para hogares y comercios.
+                Especialistas en instalación de soluciones metálicas, vidrio
+                y PVC termoestático para proyectos residenciales y comerciales.
+                Más de 10 años de experiencia y calidad garantizada.
               </p>
               <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4">
                 <a
