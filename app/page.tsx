@@ -52,7 +52,7 @@ const fortalezas = [
         />
       </svg>
     ),
-    label: "15+ Años",
+    label: "10+ Años",
   },
   {
     icon: (
@@ -129,27 +129,27 @@ const fortalezas = [
 ];
 
 const projects = [
-  { src: "/img/projects/project1.jpeg", label: "Ventanas en serie" },
-  { src: "/img/projects/project2.jpg", label: "Acero inoxidable" },
-  { src: "/img/projects/project3.jpg", label: "Puerta de ducha" },
-  { src: "/img/projects/project4.jpg", label: "ventanas en serie" },
-  { src: "/img/projects/project5.jpg", label: "Puerta de ducha" },
-  { src: "/img/projects/project6.jpg", label: "Ventanas en serie" },
-  { src: "/img/projects/project7.jpg", label: "Pvc Termoestatico" },
-  { src: "/img/projects/project8.jpg", label: "Puerta de Ducha" },
-  { src: "/img/projects/project9.png", label: "Acero inoxidable" },
-  { src: "/img/projects/project10.jpg", label: "Acero inoxidable" },
-  { src: "/img/projects/project11.jpg", label: "Acero inoxidable" },
-  { src: "/img/projects/project12.jpg", label: "Acero inoxidable" },
-  { src: "/img/projects/project13.jpg", label: "Acero inoxidable" },
-  { src: "/img/projects/project14.jpg", label: "Acero inoxidable" },
-  { src: "/img/projects/project15.jpg", label: "Acero inoxidable" },
-  { src: "/img/projects/project16.jpg", label: "Acero inoxidable" },
-  { src: "/img/projects/project17.jpg", label: "Acero inoxidable" },
-  { src: "/img/projects/project18.jpg", label: "Acero inoxidable" },
-  { src: "/img/projects/project19.jpg", label: "Acero inoxidable" },
-  { src: "/img/projects/project20.jpg", label: "Acero inoxidable" },
-  { src: "/img/projects/project21.jpg", label: "Acero inoxidable" },
+  { src: "/img/projects/project1.jpg", label: "" },
+  { src: "/img/projects/project2.jpg", label: "" },
+  { src: "/img/projects/project3.jpg", label: "" },
+  { src: "/img/projects/project4.jpg", label: "" },
+  { src: "/img/projects/project5.jpg", label: "" },
+  { src: "/img/projects/project6.jpg", label: "" },
+  { src: "/img/projects/project7.jpg", label: "" },
+  { src: "/img/projects/project8.jpg", label: "" },
+  { src: "/img/projects/project9.png", label: "" },
+  { src: "/img/projects/project10.jpg", label: "" },
+  { src: "/img/projects/project11.jpg", label: "" },
+  { src: "/img/projects/project12.jpg", label: "" },
+  { src: "/img/projects/project13.jpg", label: "" },
+  { src: "/img/projects/project14.jpg", label: "" },
+  { src: "/img/projects/project15.jpg", label: "" },
+  { src: "/img/projects/project16.jpg", label: "" },
+  { src: "/img/projects/project17.jpg", label: "" },
+  { src: "/img/projects/project18.jpg", label: "" },
+  { src: "/img/projects/project19.jpg", label: "" },
+  { src: "/img/projects/project20.jpg", label: "" },
+  { src: "/img/projects/project21.jpg", label: "" },
 ];
 
 const perPage = 6;
@@ -218,7 +218,7 @@ export default function Home() {
               </h1>
               <p className="text-base sm:text-lg text-gray-400 max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
                 Aluminio, PVC termoestático, acero inoxidable y puertas de
-                ducha. Más de 15 años de experiencia brindando soluciones
+                ducha. Más de 10 años de experiencia brindando soluciones
                 duraderas y elegantes para hogares y comercios.
               </p>
               <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4">
@@ -359,12 +359,9 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <span className="inline-block px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white bg-brand/80 rounded-full mb-2">
+                  <span className="inline-block px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white bg-brand/80 rounded-full">
                     {proj.label}
                   </span>
-                  <h3 className="text-white font-semibold text-sm">
-                    Proyecto de {proj.label}
-                  </h3>
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
@@ -412,12 +409,9 @@ export default function Home() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                       <div className="absolute bottom-0 left-0 right-0 p-5">
-                        <span className="inline-block px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white bg-brand/80 rounded-full mb-2">
+                        <span className="inline-block px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white bg-brand/80 rounded-full">
                           {proj.label}
                         </span>
-                        <h3 className="text-white font-semibold text-sm">
-                          Proyecto de {proj.label}
-                        </h3>
                       </div>
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
@@ -522,7 +516,7 @@ export default function Home() {
               En{" "}
               <strong className="text-gray-700">Calderón Instalaciones</strong>{" "}
               somos una empresa especializada en la instalación de carpintería
-              metálica y PVC. Con más de 15 años de trayectoria, nos hemos
+              metálica y PVC. Con más de 10 años de trayectoria, nos hemos
               consolidado como un referente de calidad, profesionalismo y
               confianza en el sector.
             </p>
@@ -532,7 +526,7 @@ export default function Home() {
           <div className="mb-20">
             <div className="relative bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-gray-100 overflow-hidden">
               <div className="absolute -right-8 -top-8 text-[180px] font-bold text-brand/[0.04] leading-none select-none pointer-events-none hidden sm:block">
-                15+
+                10+
               </div>
               <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center relative z-10">
                 <div className="flex-1">
@@ -548,7 +542,7 @@ export default function Home() {
                       Calderón Instalaciones
                     </strong>{" "}
                     nos hemos dedicado con pasión y profesionalismo a cada
-                    proyecto. Nuestra trayectoria de más de 15 años nos avala,
+                    proyecto. Nuestra trayectoria de más de 10 años nos avala,
                     respaldada por cientos de clientes satisfechos que confían
                     en nuestro trabajo.
                   </p>
@@ -562,7 +556,7 @@ export default function Home() {
                   </p>
                   <div className="grid grid-cols-3 gap-6 sm:gap-8">
                     {[
-                      { number: "15+", label: "Años de experiencia" },
+                      { number: "10+", label: "Años de experiencia" },
                       { number: "500+", label: "Proyectos completados" },
                       { number: "98%", label: "Clientes satisfechos" },
                     ].map((stat) => (
@@ -812,8 +806,9 @@ export default function Home() {
               const logos = [
                 "/img/providers/logo1.png",
                 "/img/providers/logo2.png",
-                "/img/providers/logo3.png",
-                "/img/providers/logo4.png",
+                "/img/providers/logo3.svg",
+                "/img/providers/logo4.avif",
+                "/img/providers/logo5.avif",
               ];
               const repeat = 6;
               return Array.from({ length: logos.length * repeat }).map(
