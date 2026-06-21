@@ -137,7 +137,19 @@ const projects = [
   { src: "/img/projects/project6.jpg", label: "Ventanas en serie" },
   { src: "/img/projects/project7.jpg", label: "Pvc Termoestatico" },
   { src: "/img/projects/project8.jpg", label: "Puerta de Ducha" },
-  { src: "/img/projects/project9.jpg", label: "Acero inoxidable" },
+  { src: "/img/projects/project9.png", label: "Acero inoxidable" },
+  { src: "/img/projects/project10.jpg", label: "Acero inoxidable" },
+  { src: "/img/projects/project11.jpg", label: "Acero inoxidable" },
+  { src: "/img/projects/project12.jpg", label: "Acero inoxidable" },
+  { src: "/img/projects/project13.jpg", label: "Acero inoxidable" },
+  { src: "/img/projects/project14.jpg", label: "Acero inoxidable" },
+  { src: "/img/projects/project15.jpg", label: "Acero inoxidable" },
+  { src: "/img/projects/project16.jpg", label: "Acero inoxidable" },
+  { src: "/img/projects/project17.jpg", label: "Acero inoxidable" },
+  { src: "/img/projects/project18.jpg", label: "Acero inoxidable" },
+  { src: "/img/projects/project19.jpg", label: "Acero inoxidable" },
+  { src: "/img/projects/project20.jpg", label: "Acero inoxidable" },
+  { src: "/img/projects/project21.jpg", label: "Acero inoxidable" },
 ];
 
 const perPage = 6;
