@@ -140,7 +140,7 @@ export default function Footer() {
 
         <div className="mt-10 sm:mt-12 pt-6 sm:pt-8 border-t border-white/5 flex flex-col items-center gap-5 sm:flex-row sm:justify-between">
           <p className="text-xs text-gray-600 text-center sm:text-left">
-            &copy; {new Date().getFullYear()} Calderón Instalaciones. Todos los
+            &copy; {new Date().getFullYear()} Calderon Group S.A.C. Todos los
             derechos reservados.
           </p>
           <div className="flex items-center gap-3">

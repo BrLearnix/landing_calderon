@@ -254,7 +254,7 @@ export default function Home() {
                 <div className="absolute -inset-3 bg-gradient-to-br from-brand/20 to-transparent rounded-3xl blur-2xl opacity-60" />
                 <Image
                   src="/img/modelo4.png"
-                  alt="Calderón Instalaciones"
+                  alt="Calderon Group S.A.C"
                   width={280}
                   height={350}
                   className="relative w-full h-auto object-contain drop-shadow-2xl animate-float"
@@ -514,7 +514,7 @@ export default function Home() {
             </h2>
             <p className="text-gray-500 leading-relaxed max-w-3xl mx-auto">
               En{" "}
-              <strong className="text-gray-700">Calderón Instalaciones</strong>{" "}
+              <strong className="text-gray-700">Calderon Group S.A.C</strong>{" "}
               somos una empresa especializada en la instalación de carpintería
               metálica y PVC. Con más de 10 años de trayectoria, nos hemos
               consolidado como un referente de calidad, profesionalismo y
@@ -539,7 +539,7 @@ export default function Home() {
                   <p className="text-gray-500 leading-relaxed mb-4">
                     Desde nuestros inicios, en{" "}
                     <strong className="text-gray-700">
-                      Calderón Instalaciones
+                      Calderon Group S.A.C
                     </strong>{" "}
                     nos hemos dedicado con pasión y profesionalismo a cada
                     proyecto. Nuestra trayectoria de más de 10 años nos avala,
@@ -578,7 +578,7 @@ export default function Home() {
                   <div className="w-80 h-80 sm:w-[24rem] sm:h-[24rem] rounded-[2rem] overflow-hidden animate-float">
                     <Image
                       src="/img/about/modelo4.jpg"
-                      alt="Calderón Instalaciones"
+                      alt="Calderon Group S.A.C"
                       width={500}
                       height={500}
                       className="w-full h-full object-cover"
