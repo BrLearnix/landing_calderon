@@ -20,6 +20,8 @@ export default function WhatsAppButton() {
   };
 
   useEffect(() => {
+    if (!isOpen) return;
+
     const el = chatRef.current;
     if (!el) return;
 
@@ -31,7 +33,7 @@ export default function WhatsAppButton() {
 
     el.addEventListener("click", handler);
     return () => el.removeEventListener("click", handler);
-  }, []);
+  }, [isOpen]);
 
   const handleSend = () => {
     openWhatsApp(message);
