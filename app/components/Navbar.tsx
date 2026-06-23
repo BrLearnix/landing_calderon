@@ -73,11 +73,13 @@ export default function Navbar() {
             className="flex items-center shrink-0"
           >
             <Image
-              src="/img/logo1.png"
+              src="/img/logo1.webp"
               alt="Calderón"
               width={scrolled ? 100 : 200}
               height={scrolled ? 100 : 200}
               className="transition-all duration-500"
+              preload
+              sizes="(max-width: 768px) 100px, 200px"
             />
           </a>
 
@@ -299,11 +301,12 @@ export default function Navbar() {
           <div className="flex items-center">
             <div className="w-auto h-8 flex items-center">
               <Image
-                src="/img/logo1.png"
+                src="/img/logo1.webp"
                 alt="Calderón"
                 width={28}
                 height={28}
                 className="object-contain"
+                loading="lazy"
               />
             </div>
           </div>

@@ -31,7 +31,7 @@ export default function AluminioPage() {
               Servicio
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-6 leading-[1.1]">
-              Carpintería en <span className="text-brand">Aluminio</span>
+              <span className="text-brand">Aluminio</span>
             </h1>
             <p className="text-gray-400 leading-relaxed mb-4">
               Fabricamos e instalamos soluciones en aluminio para proyectos

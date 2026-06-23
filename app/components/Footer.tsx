@@ -24,11 +24,12 @@ export default function Footer() {
             <div className="flex justify-center sm:justify-start mb-10">
               <div className="w-auto h-10 flex items-center">
                 <Image
-                  src="/img/logo1.png"
+                  src="/img/logo1.webp"
                   alt="Calderón"
                   width={200}
                   height={200}
                   className="object-contain"
+                  loading="lazy"
                 />
               </div>
             </div>
