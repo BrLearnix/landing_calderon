@@ -1,13 +1,12 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 const WHATSAPP_URL = "https://wa.me/51937481094";
 
 export default function WhatsAppButton() {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState("");
-  const chatRef = useRef<HTMLDivElement>(null);
 
   const openWhatsApp = (text: string) => {
     const msg = text.trim() || "Quiero el servicio de:";
@@ -17,10 +16,8 @@ export default function WhatsAppButton() {
     setIsOpen(false);
   };
 
-  const handleChatClick = (e: React.MouseEvent) => {
-    if (e.target === chatRef.current || !(e.target as HTMLElement).closest("input, button, textarea")) {
-      openWhatsApp(message);
-    }
+  const handleChatClick = () => {
+    openWhatsApp(message);
   };
 
   const handleSend = () => {
@@ -35,7 +32,6 @@ export default function WhatsAppButton() {
     <div className="fixed bottom-6 right-6 z-[9999] flex flex-col items-end">
       {isOpen && (
         <div
-          ref={chatRef}
           onClick={handleChatClick}
           className="mb-4 w-[340px] sm:w-[380px] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden animate-fade-in origin-bottom-right cursor-pointer"
         >
