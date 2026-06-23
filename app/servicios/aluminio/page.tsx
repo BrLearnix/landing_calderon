@@ -43,7 +43,7 @@ export default function AluminioPage() {
               href="/#cotizar"
               className="inline-flex items-center gap-2 bg-brand hover:bg-brand-dark text-white font-semibold rounded-lg transition-all duration-200 text-sm uppercase tracking-wider px-6 py-3.5 shadow-lg shadow-brand/20 hover:shadow-xl hover:shadow-brand/30"
             >
-              Cotizar proyecto
+              Cotizar servicios
               <svg
                 className="w-4 h-4"
                 fill="none"
