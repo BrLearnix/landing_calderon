@@ -1,12 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const WHATSAPP_URL = "https://wa.me/51937481094";
 
 export default function WhatsAppButton() {
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState("");
+  const chatRef = useRef<HTMLDivElement>(null);
+  const messageRef = useRef(message);
+  messageRef.current = message;
 
   const openWhatsApp = (text: string) => {
     const msg = text.trim() || "Quiero el servicio de:";
@@ -16,9 +19,19 @@ export default function WhatsAppButton() {
     setIsOpen(false);
   };
 
-  const handleChatClick = () => {
-    openWhatsApp(message);
-  };
+  useEffect(() => {
+    const el = chatRef.current;
+    if (!el) return;
+
+    const handler = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.closest("button, input, textarea")) return;
+      openWhatsApp(messageRef.current);
+    };
+
+    el.addEventListener("click", handler);
+    return () => el.removeEventListener("click", handler);
+  }, []);
 
   const handleSend = () => {
     openWhatsApp(message);
@@ -32,7 +45,7 @@ export default function WhatsAppButton() {
     <div className="fixed bottom-6 right-6 z-[9999] flex flex-col items-end">
       {isOpen && (
         <div
-          onClick={handleChatClick}
+          ref={chatRef}
           className="mb-4 w-[340px] sm:w-[380px] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden animate-fade-in origin-bottom-right cursor-pointer"
         >
           <div className="bg-[#075E54] px-4 py-3 flex items-center gap-3">
@@ -92,7 +105,6 @@ export default function WhatsAppButton() {
               onChange={(e) => setMessage(e.target.value)}
               onKeyDown={handleKeyDown}
               placeholder="Escribe un mensaje..."
-              onClick={(e) => e.stopPropagation()}
               className="flex-1 bg-white border border-gray-200 rounded-lg px-4 py-2.5 text-sm text-gray-800 outline-none focus:ring-2 focus:ring-[#075E54]/30 focus:border-[#075E54] placeholder:text-gray-400 transition-all"
             />
             <button
@@ -116,7 +128,7 @@ export default function WhatsAppButton() {
               after:border-l-[6px] after:border-l-transparent
               after:border-r-[6px] after:border-r-transparent
               after:border-t-[8px] after:border-t-white/95"
-          >
+        >
             Escríbenos, te atendemos{" "}
             <span className="text-[#25D366] font-bold">inmediato</span>
           </div>
