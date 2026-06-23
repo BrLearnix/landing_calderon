@@ -22,6 +22,13 @@ export const metadata: Metadata = {
   },
   description:
     "Expertos en instalaciones de aluminio, PVC termoestático, acero inoxidable y puertas de ducha. Calidad y compromiso en cada proyecto.",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-192x192.png", sizes: "192x192", type: "image/png" },
+    ],
+  },
 };
 
 export default function RootLayout({
