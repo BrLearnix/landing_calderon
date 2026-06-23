@@ -14,7 +14,10 @@ export default function WhatsAppButton() {
   const openWhatsApp = (text: string) => {
     const msg = text.trim() || "Quiero el servicio de:";
     const url = `${WHATSAPP_URL}?text=${encodeURIComponent(msg)}`;
-    window.open(url, "_blank");
+    const w = window.open(url, "_blank");
+    if (!w || w.closed) {
+      window.location.href = url;
+    }
     setMessage("");
     setIsOpen(false);
   };
