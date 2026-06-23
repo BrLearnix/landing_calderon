@@ -5,9 +5,9 @@ const servicios = [
   {
     title: "Aluminio",
     href: "/servicios/aluminio",
-    img: null,
+    img: "/img/services/aluminio/img1.jpg",
     description:
-      "Ventanas, puertas, mamparas, fachadas, barandas y estructuras livianas fabricadas a medida con perfiles de primera calidad.",
+      "Ventanas, puertas, mamparas y fachadas de aluminio a medida con rotura de puente térmico y acabados personalizados.",
     tags: [
       "Ventanas",
       "Puertas",
@@ -22,7 +22,7 @@ const servicios = [
     href: "/servicios/pvc-termoestatico",
     img: "/img/services/pvc/img1.jpg",
     description:
-      "Ventanas y puertas en PVC termoestático con rotura de puente térmico para máximo aislamiento térmico y acústico.",
+      "Ventanas y puertas en PVC termoestático con rotura de puente térmico. Máximo aislamiento térmico y acústico en una amplia gama de colores y acabados.",
     tags: ["Ventanas", "Puertas", "Aislamiento", "Perfiles", "Acabados"],
   },
   {
@@ -30,7 +30,7 @@ const servicios = [
     href: "/servicios/acero-inoxidable",
     img: "/img/services/acero/img1.jpg",
     description:
-      "Barandas, pasamanos, cocinas, escaleras y estructuras en acero inoxidable con acabados cepillado, espejo, satinado y color.",
+      "Barandas, pasamanos, cocinas y escaleras en acero inoxidable con acabados cepillado, espejo, satinado o color. Durabilidad y diseño premium.",
     tags: ["Barandas", "Pasamanos", "Cocinas", "Escaleras", "Estructuras"],
   },
   {
@@ -38,7 +38,7 @@ const servicios = [
     href: "/servicios/puerta-de-ducha",
     img: "/img/services/puerta/img1.jpg",
     description:
-      "Puertas de ducha con perfiles de aluminio y vidrio templado de seguridad. Diseños corredizos, abatibles y plegables.",
+      "Puertas de ducha con perfiles de aluminio y vidrio templado. Diseños corredizos, abatibles o plegables con tratamiento antical.",
     tags: ["Ducha", "Baño", "Vidrio templado", "Corredizas", "Abatibles"],
   },
 ];
@@ -56,63 +56,51 @@ export default function ServiciosPage() {
             <span className="text-brand">Instalación metálica y PVC</span>
           </h1>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Ofrecemos una amplia gama de servicios especializados para proyectos
-            residenciales, comerciales e industriales.
+            Soluciones en aluminio, PVC termoestático, acero inoxidable y
+            puertas de ducha para proyectos residenciales, comerciales e
+            industriales.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {servicios.map((s) => (
             <Link
               key={s.title}
               href={s.href}
-              className="group relative bg-white/5 rounded-3xl p-8 border border-white/10 hover:bg-white/[0.07] transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+              className="group relative bg-white/[0.03] rounded-2xl overflow-hidden border border-white/[0.06] hover:border-brand/30 transition-all duration-300"
             >
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand to-brand/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="flex items-start gap-5">
-                <div className="w-28 h-28 rounded-2xl overflow-hidden shrink-0 border border-white/10">
-                  {s.img ? (
-                    <Image
-                      src={s.img}
-                      alt={s.title}
-                      width={112}
-                      height={112}
-                      className="w-full h-full object-cover"
-                    />
-                  ) : (
-                    <div className="w-full h-full bg-brand/10 flex items-center justify-center text-brand">
-                      <svg
-                        className="w-8 h-8"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.5}
-                          d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                        />
-                      </svg>
-                    </div>
-                  )}
+              <div className="flex items-stretch">
+                <div className="relative w-28 shrink-0 overflow-hidden">
+                  <Image
+                    src={s.img}
+                    alt={s.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    sizes="112px"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#1a1a2e]" />
                 </div>
-                <div className="min-w-0">
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-brand transition-colors duration-200">
+                <div className="flex-1 min-w-0 p-4">
+                  <h3 className="text-base font-bold text-white mb-1 group-hover:text-brand transition-colors duration-200">
                     {s.title}
                   </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                  <p className="text-gray-400 text-xs leading-relaxed mb-3 line-clamp-2">
                     {s.description}
                   </p>
-                  <div className="flex flex-wrap gap-2">
-                    {s.tags.map((t) => (
+                  <div className="flex flex-wrap gap-1.5">
+                    {s.tags.slice(0, 3).map((t) => (
                       <span
                         key={t}
-                        className="px-2.5 py-1 bg-white/5 rounded-md text-[10px] font-medium text-gray-500 border border-white/5"
+                        className="px-2 py-0.5 bg-white/[0.04] rounded-full text-[10px] font-medium text-gray-500 border border-white/[0.06]"
                       >
                         {t}
                       </span>
                     ))}
+                    {s.tags.length > 3 && (
+                      <span className="px-2 py-0.5 text-[10px] font-medium text-brand/60">
+                        +{s.tags.length - 3}
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>

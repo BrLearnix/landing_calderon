@@ -33,15 +33,11 @@ export default function PvcPage() {
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-6 leading-[1.1]">
               PVC <span className="text-brand">Termoestático</span>
             </h1>
-            <p className="text-gray-400 leading-relaxed mb-4">
-              Fabricamos e instalamos ventanas y puertas en PVC termoestático de
-              alta prestación. Sistemas de perfilería con rotura de puente
-              térmico que garantizan máximo aislamiento térmico y acústico.
-            </p>
             <p className="text-gray-400 leading-relaxed mb-8">
-              Disponemos de una amplia gama de acabados y colores, con perfiles
-              de PVC rígido de alta resistencia a la intemperie, ideales para
-              proyectos residenciales y comerciales.
+              Ventanas y puertas en PVC termoestático con rotura de puente
+              térmico. Máximo aislamiento térmico y acústico, perfiles
+              resistentes a la intemperie y una amplia gama de colores y
+              acabados.
             </p>
             <a
               href="/#cotizar"

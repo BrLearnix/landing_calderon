@@ -585,13 +585,15 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex-shrink-0">
-                  <div className="w-80 h-80 sm:w-[24rem] sm:h-[24rem] rounded-[2rem] overflow-hidden animate-float">
+                  <div className="w-80 h-80 sm:w-[24rem] sm:h-[24rem] rounded-[2rem] overflow-hidden animate-float shadow-lg shadow-brand/10 relative group">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-brand/30 via-transparent to-brand/10 z-10 mix-blend-overlay" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 z-10" />
                     <Image
                       src="/img/about/modelo4.jpg"
                       alt="Calderon Group S.A.C"
                       width={500}
                       height={500}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[20%] contrast-110 brightness-95"
                     />
                   </div>
                 </div>

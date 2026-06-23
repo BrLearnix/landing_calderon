@@ -23,15 +23,11 @@ export default function AceroPage() {
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-6 leading-[1.1]">
               <span className="text-brand">Acero Inoxidable</span>
             </h1>
-            <p className="text-gray-400 leading-relaxed mb-4">
-              Fabricamos e instalamos soluciones en acero inoxidable para proyectos
-              residenciales, comerciales e industriales. Barandas, pasamanos, cocinas,
-              escaleras y estructuras a medida con acabados de primera calidad.
-            </p>
             <p className="text-gray-400 leading-relaxed mb-8">
-              Trabajamos con acero inoxidable en diversos acabados: cepillado,
-              espejo, satinado y color, garantizando durabilidad y resistencia
-              en cada proyecto.
+              Barandas, pasamanos, cocinas y escaleras en acero inoxidable.
+              Acabados cepillado, espejo, satinado o color. Durabilidad,
+              resistencia y un acabado premium para proyectos residenciales y
+              comerciales.
             </p>
             <a
               href="/#cotizar"

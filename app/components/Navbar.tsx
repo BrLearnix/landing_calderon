@@ -7,6 +7,7 @@ const menuItems = [
   { label: "Inicio", href: "/" },
   {
     label: "Servicios",
+    href: "/servicios",
     submenu: [
       { label: "Aluminio", href: "/servicios/aluminio" },
       { label: "PVC Termoestático", href: "/servicios/pvc-termoestatico" },
@@ -96,8 +97,9 @@ export default function Navbar() {
                   onMouseEnter={handleOpen}
                   onMouseLeave={handleClose}
                 >
-                  <button
-                    onClick={() => setDropdownOpen(!dropdownOpen)}
+                  <a
+                    href={item.href}
+                    onClick={handleNavClick}
                     className="relative text-xs font-semibold uppercase tracking-[0.15em] transition-colors duration-200 flex items-center gap-1.5 py-1 group text-white/70 hover:text-brand"
                   >
                     {item.label}
@@ -121,7 +123,7 @@ export default function Navbar() {
                         dropdownOpen ? "scale-x-100" : ""
                       }`}
                     />
-                  </button>
+                  </a>
 
                   <div
                     ref={dropdownRef}
@@ -179,7 +181,7 @@ export default function Navbar() {
                 aria-label="Facebook"
               >
                 <svg
-                  className={`transition-all duration-500 ${scrolled ? "w-3.5 h-3.5" : "w-4 h-4"}`}
+                  className={`transition-all duration-500 ${scrolled ? "w-4 h-4" : "w-5 h-5"}`}
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -194,7 +196,7 @@ export default function Navbar() {
                 aria-label="Instagram"
               >
                 <svg
-                  className={`transition-all duration-500 ${scrolled ? "w-3.5 h-3.5" : "w-4 h-4"}`}
+                  className={`transition-all duration-500 ${scrolled ? "w-4 h-4" : "w-5 h-5"}`}
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -209,7 +211,7 @@ export default function Navbar() {
                 aria-label="TikTok"
               >
                 <svg
-                  className={`transition-all duration-500 ${scrolled ? "w-3.5 h-3.5" : "w-4 h-4"}`}
+                  className={`transition-all duration-500 ${scrolled ? "w-4 h-4" : "w-5 h-5"}`}
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -373,29 +375,38 @@ export default function Navbar() {
           {menuItems.map((item) =>
             item.submenu ? (
               <div key={item.label}>
-                <button
-                  onClick={() => setDropdownOpen(!dropdownOpen)}
-                  className={`flex items-center justify-between w-full px-4 py-3 rounded-lg text-xs font-semibold uppercase tracking-[0.15em] transition-all duration-200 ${
-                    dropdownOpen
-                      ? "text-brand"
-                      : "text-gray-400 hover:text-brand"
-                  }`}
-                >
-                  {item.label}
-                  <svg
-                    className={`w-3 h-3 transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`}
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
+                <div className="flex items-center justify-between w-full px-3">
+                  <a
+                    href={item.href}
+                    onClick={handleNavClick}
+                    className={`flex-1 px-1 py-3 rounded-lg text-xs font-semibold uppercase tracking-[0.15em] transition-all duration-200 ${
+                      dropdownOpen
+                        ? "text-brand"
+                        : "text-gray-400 hover:text-brand"
+                    }`}
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
+                    {item.label}
+                  </a>
+                  <button
+                    onClick={() => setDropdownOpen(!dropdownOpen)}
+                    className="p-2 text-gray-400 hover:text-brand transition-colors duration-200"
+                    aria-label="Abrir submenú"
+                  >
+                    <svg
+                      className={`w-3 h-3 transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`}
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
+                </div>
                 <div
                   className={`overflow-hidden transition-all duration-200 ${
                     dropdownOpen ? "max-h-60" : "max-h-0"

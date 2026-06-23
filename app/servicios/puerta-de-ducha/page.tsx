@@ -24,16 +24,10 @@ export default function DuchaPage() {
               Puerta de{" "}
               <span className="text-brand">Ducha</span>
             </h1>
-            <p className="text-gray-400 leading-relaxed mb-4">
-              Fabricamos e instalamos puertas de ducha de alta calidad con
-              perfiles de aluminio y vidrio templado de seguridad. Diseños
-              minimalistas, corredizas, abatibles y plegables para todo tipo
-              de baños.
-            </p>
             <p className="text-gray-400 leading-relaxed mb-8">
-              Garantizamos estanqueidad, durabilidad y un acabado impecable
-              con sistemas de perfilería de última generación y vidrios con
-              tratamiento antical.
+              Puertas de ducha con perfiles de aluminio y vidrio templado de
+              seguridad. Diseños corredizos, abatibles o plegables.
+              Estanqueidad total, tratamiento antical y un acabado impecable.
             </p>
             <a
               href="/#cotizar"
