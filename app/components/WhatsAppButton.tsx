@@ -14,10 +14,11 @@ export default function WhatsAppButton() {
   const openWhatsApp = (text: string) => {
     const msg = text.trim() || "Quiero el servicio de:";
     const url = `${WHATSAPP_URL}?text=${encodeURIComponent(msg)}`;
-    const w = window.open(url, "_blank");
-    if (!w || w.closed) {
-      window.location.href = url;
-    }
+    const a = document.createElement("a");
+    a.href = url;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    a.click();
     setMessage("");
     setIsOpen(false);
   };
