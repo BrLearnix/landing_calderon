@@ -52,7 +52,7 @@ const fortalezas = [
         />
       </svg>
     ),
-    label: "10+ Años",
+    label: "TRAYECTORIA COMPROBADA",
   },
   {
     icon: (
@@ -106,7 +106,7 @@ const fortalezas = [
         />
       </svg>
     ),
-    label: "Instalación Profesional",
+    label: "INSTALACIÓN ESPECIALIZADA",
   },
   {
     icon: (
@@ -200,27 +200,30 @@ export default function Home() {
             priority={i === 0}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0f0f1a]/80 via-[#1a1a2e]/70 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0f0f1a]/90 via-[#1a1a2e]/80 to-black/90" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(234,179,8,0.12),transparent_70%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(234,179,8,0.08),transparent_70%)]" />
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className="text-center lg:text-left pt-20 lg:pt-0">
+            <div className="text-center lg:text-left pt-32 lg:pt-24">
               <span className="inline-block text-xs uppercase tracking-[0.25em] text-brand font-semibold mb-6">
-                Expertos en instalaciones metálicas, vidrio y PVC
+                EXPERTOS EN INSTALACIONES ARQUITECTÓNICOS EN PVC, ALUMINIO Y
+                VIDRIO QUE TRANSFORMAN TUS ESPACIOS
               </span>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.08] tracking-tight mb-6">
-                Transformamos
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white/90 leading-[1.08] tracking-tight mb-6">
+                Más de 10 años
                 <br />
-                tus espacios
+                Transformando espacios
                 <br />
-                con <span className="text-brand">calidad</span>
+                con <span className="text-brand">calidad</span>{" "}
+                <span className="text-white">y</span>{" "}
+                <span className="text-brand">presicion</span>
               </h1>
               <p className="text-base sm:text-lg text-gray-400 max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
-                Especialistas en instalación de soluciones metálicas, vidrio
-                y PVC termoestático para proyectos residenciales y comerciales.
-                Más de 10 años de experiencia y calidad garantizada.
+                Especialistas en la instalación de soluciones en PVC
+                termoacústico, aluminio, vidrio y acero inoxidable, combinando
+                calidad, seguridad, confort y diseño.
               </p>
               <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4">
                 <a
@@ -336,53 +339,56 @@ export default function Home() {
               Proyectos
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4">
-              Nuestros Trabajos <span className="text-brand">recientes</span>
+              Experiencia que nos <span className="text-brand">respalda</span>
             </h2>
             <p className="text-gray-400 max-w-xl mx-auto">
-              Conoce algunos de los proyectos que hemos realizado para nuestros
-              clientes.
+              Explore algunos de los proyectos que hemos ejecutado con éxito,
+              aportando calidad, diseño y durabilidad a espacios residenciales,
+              comerciales e industriales
             </p>
           </div>
 
           {/* Mobile: all projects stacked vertically */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:hidden">
-            {(showAllMobile ? projects : projects.slice(0, 4)).map((proj, i) => (
-              <div
-                key={i}
-                onClick={() => setSelectedProj(i)}
-                className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-gray-800 cursor-pointer"
-              >
-                <Image
-                  src={proj.src}
-                  alt={`Proyecto de ${proj.label}`}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <span className="inline-block px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white bg-brand/80 rounded-full">
-                    {proj.label}
-                  </span>
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                    <svg
-                      className="w-5 h-5 text-white"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                      />
-                    </svg>
+            {(showAllMobile ? projects : projects.slice(0, 4)).map(
+              (proj, i) => (
+                <div
+                  key={i}
+                  onClick={() => setSelectedProj(i)}
+                  className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-gray-800 cursor-pointer"
+                >
+                  <Image
+                    src={proj.src}
+                    alt={`Proyecto de ${proj.label}`}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <span className="inline-block px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white bg-brand/80 rounded-full">
+                      {proj.label}
+                    </span>
+                  </div>
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                      <svg
+                        className="w-5 h-5 text-white"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                        />
+                      </svg>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ),
+            )}
             {!showAllMobile && projects.length > 4 && (
               <div className="col-span-full flex justify-center mt-2">
                 <button
@@ -524,11 +530,14 @@ export default function Home() {
               <span className="text-brand">compromiso</span>
             </h2>
             <p className="text-gray-500 leading-relaxed max-w-3xl mx-auto">
-              En <strong className="text-gray-700">Calderon Group S.A.C</strong>{" "}
-              somos una empresa especializada en la instalación de carpintería
-              metálica y PVC. Con más de 10 años de trayectoria, nos hemos
-              consolidado como un referente de calidad, profesionalismo y
-              confianza en el sector.
+              En{" "}
+              <strong className="text-gray-700">Calderon Group S.A.C.</strong>{" "}
+              somos especialistas en soluciones arquitectónicas en PVC
+              termoacústico, aluminio, vidrio y acero inoxidable. Con más de 10
+              años de experiencia, desarrollamos proyectos residenciales,
+              comerciales e industriales, destacando por nuestra calidad,
+              innovación, confianza y compromiso con la satisfacción de nuestros
+              clientes.
             </p>
           </div>
 
@@ -549,20 +558,21 @@ export default function Home() {
                   <p className="text-gray-500 leading-relaxed mb-4">
                     Desde nuestros inicios, en{" "}
                     <strong className="text-gray-700">
-                      Calderon Group S.A.C
+                      Calderon Group S.A.C.
                     </strong>{" "}
-                    nos hemos dedicado con pasión y profesionalismo a cada
-                    proyecto. Nuestra trayectoria de más de 10 años nos avala,
-                    respaldada por cientos de clientes satisfechos que confían
-                    en nuestro trabajo.
+                    hemos trabajado con dedicación y excelencia, consolidándonos
+                    como una empresa de confianza en el sector. Nuestra
+                    trayectoria de más de 10 años está respaldada por la
+                    ejecución exitosa de proyectos y la satisfacción de nuestros
+                    clientes.
                   </p>
                   <p className="text-gray-500 leading-relaxed mb-8">
                     Hemos participado en proyectos residenciales, comerciales e
-                    industriales, desarrollando una amplia experiencia en
-                    instalaciones de aluminio, PVC termoestático, acero
-                    inoxidable y puertas de ducha. Cada obra ejecutada es un
-                    testimonio de nuestro compromiso con la calidad y el
-                    detalle.
+                    industriales, ofreciendo soluciones en ventanas, mamparas,
+                    puertas, cerramientos y sistemas arquitectónicos en PVC
+                    termoacústico, aluminio, vidrio y acero inoxidable. Cada
+                    proyecto refleja nuestro compromiso con la calidad, la
+                    precisión y la durabilidad.
                   </p>
                   <div className="grid grid-cols-3 gap-6 sm:gap-8">
                     {[
@@ -609,11 +619,10 @@ export default function Home() {
                 <h3 className="text-xl font-bold text-gray-900">Misión</h3>
               </div>
               <p className="text-gray-500 leading-relaxed">
-                Proveer soluciones integrales en carpintería metálica y PVC,
-                ofreciendo instalaciones de alta calidad que superen las
-                expectativas de nuestros clientes, mediante un equipo
-                profesional comprometido con la excelencia, la innovación y el
-                servicio personalizado.
+                Ofrecer soluciones arquitectónicas en PVC termoacústica,
+                aluminio, vidrio y acero inoxidable, garantizando calidad,
+                innovación y un servicio personalizado que genere valor y
+                satisfacción en cada proyecto.
               </p>
             </div>
 
@@ -623,10 +632,9 @@ export default function Home() {
                 <h3 className="text-xl font-bold text-gray-900">Visión</h3>
               </div>
               <p className="text-gray-500 leading-relaxed">
-                Ser reconocidos como la empresa líder en instalaciones de
-                carpintería metálica y PVC en la región, destacando por nuestra
-                calidad, responsabilidad y capacidad de innovación,
-                contribuyendo al desarrollo y bienestar de nuestra comunidad.
+                Consolidarnos como una empresa líder en el sector, reconocida
+                por nuestra excelencia operacional, innovación y compromiso con
+                la calidad en cada proyecto que desarrollamos.
               </p>
             </div>
           </div>
@@ -645,8 +653,8 @@ export default function Home() {
               <span className="text-brand">sin compromiso</span>
             </h2>
             <p className="text-gray-400 max-w-xl mx-auto">
-              Cuéntanos tu proyecto y te enviaremos un presupuesto personalizado
-              a la brevedad.
+              Transformemos su idea en realidad. Comparta los detalles de su
+              proyecto y reciba una propuesta adaptada a sus necesidades.
             </p>
           </div>
 
@@ -677,7 +685,7 @@ export default function Home() {
                     </svg>
                   ),
                   label: "Dirección",
-                  value: "Av. Tengo María N° 1555 - Breña, Lima, Perú 15082",
+                  value: "Av. Tingo María N° 1555 – Breña, Lima, Perú 15082",
                   href: null,
                 },
                 {
@@ -784,7 +792,7 @@ export default function Home() {
             {/* Map */}
             <div className="rounded-2xl overflow-hidden border border-white/5 min-h-[300px] lg:min-h-full bg-[#1a1a2e] flex items-center justify-center">
               <iframe
-                src="https://www.google.com/maps?q=Av.+Tengo+Mar%C3%ADa+N%C2%B0+1555+Bre%C3%B1a+Lima+Peru&output=embed"
+                src="https://www.google.com/maps?q=Av.+Tingo+Mar%C3%ADa+N%C2%B0+1555+Bre%C3%B1a+Lima+Peru&output=embed"
                 width="100%"
                 height="100%"
                 style={{ minHeight: "320px" }}
@@ -819,24 +827,25 @@ export default function Home() {
                 "/img/providers/logo1.png",
                 "/img/providers/logo2.png",
                 "/img/providers/logo3.svg",
-                "/img/providers/logo4.avif",
+                "/img/providers/logo4.png",
                 "/img/providers/logo5.avif",
               ];
               const repeat = 6;
               return Array.from({ length: logos.length * repeat }).map(
                 (_, i) => {
                   const src = logos[i % logos.length];
+                  const isLogo4 = src.includes("logo4");
                   return (
                     <div
                       key={i}
                       className="shrink-0 mx-8 sm:mx-16 lg:mx-24 flex items-center justify-center"
                     >
-                      <div className="w-28 h-28 sm:w-36 sm:h-36 flex items-center justify-center">
+                      <div className={`${isLogo4 ? "w-36 h-36 sm:w-52 sm:h-52" : "w-28 h-28 sm:w-36 sm:h-36"} flex items-center justify-center`}>
                         <Image
                           src={src}
                           alt="Proveedor"
-                          width={80}
-                          height={80}
+                          width={isLogo4 ? 120 : 80}
+                          height={isLogo4 ? 120 : 80}
                           className="w-full h-full object-contain"
                         />
                       </div>

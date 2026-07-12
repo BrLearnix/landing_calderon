@@ -101,7 +101,7 @@ export default function Footer() {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-                <span>Av. Tengo María N° 1555 - Breña, Lima</span>
+                <span>Av. Tingo María N° 1555 – Breña, Lima</span>
               </li>
               <li className="flex items-center justify-center sm:justify-start gap-2.5">
                 <svg
