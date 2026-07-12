@@ -824,11 +824,12 @@ export default function Home() {
           <div className="flex animate-marquee items-center">
             {(() => {
               const logos = [
+                "/img/providers/logo3.svg",
+                "/img/providers/logo6.png",
                 "/img/providers/logo1.png",
                 "/img/providers/logo2.png",
-                "/img/providers/logo3.svg",
-                "/img/providers/logo4.png",
                 "/img/providers/logo5.avif",
+                "/img/providers/logo4.png",
               ];
               const repeat = 6;
               return Array.from({ length: logos.length * repeat }).map(
