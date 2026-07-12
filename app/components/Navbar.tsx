@@ -10,7 +10,7 @@ const menuItems = [
     href: "/servicios",
     submenu: [
       { label: "Aluminio", href: "/servicios/aluminio" },
-      { label: "PVC Termoestático", href: "/servicios/pvc-termoestatico" },
+      { label: "PVC Termoacústico", href: "/servicios/pvc-termoestatico" },
       { label: "Acero Inoxidable", href: "/servicios/acero-inoxidable" },
       { label: "Puerta de Ducha", href: "/servicios/puerta-de-ducha" },
     ],

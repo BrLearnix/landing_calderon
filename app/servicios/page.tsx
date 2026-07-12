@@ -18,11 +18,11 @@ const servicios = [
     ],
   },
   {
-    title: "PVC Termoestático",
+    title: "PVC Termoacústico",
     href: "/servicios/pvc-termoestatico",
     img: "/img/services/pvc/img1.jpg",
     description:
-      "Ventanas y puertas en PVC termoestático con rotura de puente térmico. Máximo aislamiento térmico y acústico en una amplia gama de colores y acabados.",
+      "Ventanas y puertas en PVC termoacústico con rotura de puente térmico. Máximo aislamiento térmico y acústico en una amplia gama de colores y acabados.",
     tags: ["Ventanas", "Puertas", "Aislamiento", "Perfiles", "Acabados"],
   },
   {
@@ -56,7 +56,7 @@ export default function ServiciosPage() {
             <span className="text-brand">Instalación metálica y PVC</span>
           </h1>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Soluciones en aluminio, PVC termoestático, acero inoxidable y
+            Soluciones en aluminio, PVC termoacústico, acero inoxidable y
             puertas de ducha para proyectos residenciales, comerciales e
             industriales.
           </p>

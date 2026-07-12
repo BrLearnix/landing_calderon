@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Calderon Group S.A.C",
   description:
-    "Expertos en instalaciones de aluminio, PVC termoestático, acero inoxidable y puertas de ducha. Calidad y compromiso en cada proyecto.",
+    "Expertos en instalaciones de aluminio, PVC termoacústico, acero inoxidable y puertas de ducha. Calidad y compromiso en cada proyecto.",
   icons: {
     icon: [
       { url: "/icon.svg", type: "image/svg+xml" },

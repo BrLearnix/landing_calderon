@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const servicios = [
   "Aluminio",
-  "PVC Termoestático",
+  "PVC Termoacústico",
   "Acero Inoxidable",
   "Puerta de Ducha",
 ];
@@ -34,7 +34,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm leading-relaxed text-gray-500 max-w-xs mx-auto sm:mx-0">
-              Expertos en instalaciones de aluminio, PVC termoestático, acero
+              Expertos en instalaciones de aluminio, PVC termoacústico, acero
               inoxidable y puertas de ducha. Calidad y compromiso en cada
               proyecto.
             </p>

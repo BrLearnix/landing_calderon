@@ -31,10 +31,10 @@ export default function PvcPage() {
               Servicio
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-6 leading-[1.1]">
-              PVC <span className="text-brand">Termoestático</span>
+              PVC <span className="text-brand">Termoacústico</span>
             </h1>
             <p className="text-gray-400 leading-relaxed mb-8">
-              Ventanas y puertas en PVC termoestático con rotura de puente
+              Ventanas y puertas en PVC termoacústico con rotura de puente
               térmico. Máximo aislamiento térmico y acústico, perfiles
               resistentes a la intemperie y una amplia gama de colores y
               acabados.
@@ -66,7 +66,7 @@ export default function PvcPage() {
                 "Aislamiento",
                 "Perfiles",
                 "Acabados",
-                "Termoestático",
+                "Termoacústico",
               ].map((a) => (
                 <span
                   key={a}
@@ -86,7 +86,7 @@ export default function PvcPage() {
             extraImages={["img4.jpg", "img5.jpg", "img6.jpeg"].map(
               (s) => `/img/services/pvc/${s}`,
             )}
-            alt="PVC Termoestático"
+            alt="PVC Termoacústico"
           />
         </div>
       </div>
