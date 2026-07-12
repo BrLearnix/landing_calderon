@@ -821,7 +821,7 @@ export default function Home() {
           </div>
         </div>
         <div className="max-w-7xl mx-auto overflow-hidden">
-          <div className="flex animate-marquee items-center">
+          <div className="flex animate-marquee items-center w-max">
             {(() => {
               const logos = [
                 "/img/providers/logo3.svg",
@@ -831,10 +831,8 @@ export default function Home() {
                 "/img/providers/logo5.avif",
                 "/img/providers/logo4.png",
               ];
-              const repeat = 6;
-              return Array.from({ length: logos.length * repeat }).map(
-                (_, i) => {
-                  const src = logos[i % logos.length];
+              const items = [...logos, ...logos];
+              return items.map((src, i) => {
                   const isLogo4 = src.includes("logo4");
                   return (
                     <div
@@ -852,8 +850,7 @@ export default function Home() {
                       </div>
                     </div>
                   );
-                },
-              );
+              });
             })()}
           </div>
         </div>

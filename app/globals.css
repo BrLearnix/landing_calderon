@@ -49,10 +49,6 @@ html {
   will-change: transform;
 }
 
-.animate-marquee:hover {
-  animation-play-state: paused;
-}
-
 @keyframes chat-bubble {
   0% { opacity: 0; transform: translateX(20px) scale(0.9); }
   4% { opacity: 1; transform: translateX(-2px) scale(1.02); }
