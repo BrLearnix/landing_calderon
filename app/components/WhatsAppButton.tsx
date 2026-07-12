@@ -135,7 +135,7 @@ export default function WhatsAppButton() {
               after:border-r-[6px] after:border-r-transparent
               after:border-t-[8px] after:border-t-white/95"
         >
-            ¿Necesitas ayuda?, escríbenos.
+            ¿Necesitas ayuda?, <span className="text-[#25D366] font-bold">escríbenos.</span>
           </div>
         )}
         <button
