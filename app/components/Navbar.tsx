@@ -79,7 +79,6 @@ export default function Navbar() {
               width={scrolled ? 100 : 200}
               height={scrolled ? 100 : 200}
               className="transition-all duration-500"
-              style={{ filter: "invert(1)" }}
               preload
               sizes="(max-width: 768px) 100px, 200px"
             />
