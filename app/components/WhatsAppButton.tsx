@@ -91,7 +91,7 @@ export default function WhatsAppButton() {
             <div className="flex justify-start">
               <div className="bg-white rounded-lg rounded-bl-none px-3.5 py-2.5 max-w-[85%] shadow-sm">
                 <p className="text-gray-800 text-sm">
-                  Soy tu asesor comercial. ¿En qué puedo ayudarte?
+                  Soy tu asesor comercial. ¿En qué puedo ayudarle?
                 </p>
               </div>
             </div>

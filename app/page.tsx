@@ -15,6 +15,7 @@ const backgrounds = [
   "/img/backgrounds/background9.jpg",
   "/img/backgrounds/background10.jpg",
   "/img/backgrounds/background11.jpg",
+  "/img/backgrounds/background12.jpeg",
 ];
 
 const fortalezas = [
