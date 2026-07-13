@@ -128,41 +128,56 @@ const fortalezas = [
   },
 ];
 
+const categories = [
+  "Todos",
+  "Aluminio",
+  "PVC Termoacústico",
+  "Acero Inoxidable",
+  "Puerta de Ducha",
+];
+
 const projects = [
-  { src: "/img/projects/project1.jpg", label: "" },
-  { src: "/img/projects/project2.jpg", label: "" },
-  { src: "/img/projects/project3.jpg", label: "" },
-  { src: "/img/projects/project4.jpg", label: "" },
-  { src: "/img/projects/project5.jpg", label: "" },
-  { src: "/img/projects/project6.jpg", label: "" },
-  { src: "/img/projects/project7.jpg", label: "" },
-  { src: "/img/projects/project8.jpg", label: "" },
-  { src: "/img/projects/project9.png", label: "" },
-  { src: "/img/projects/project10.jpg", label: "" },
-  { src: "/img/projects/project11.jpg", label: "" },
-  { src: "/img/projects/project12.jpg", label: "" },
-  { src: "/img/projects/project13.jpg", label: "" },
-  { src: "/img/projects/project14.jpg", label: "" },
-  { src: "/img/projects/project15.jpg", label: "" },
-  { src: "/img/projects/project16.jpg", label: "" },
-  { src: "/img/projects/project17.jpg", label: "" },
-  { src: "/img/projects/project18.jpg", label: "" },
-  { src: "/img/projects/project19.jpg", label: "" },
-  { src: "/img/projects/project20.jpg", label: "" },
-  { src: "/img/projects/project21.jpg", label: "" },
+  { src: "/img/projects/project1.jpg", category: "Aluminio" },
+  { src: "/img/projects/project2.jpg", category: "Aluminio" },
+  { src: "/img/projects/project3.jpg", category: "Aluminio" },
+  { src: "/img/projects/project4.jpg", category: "Aluminio" },
+  { src: "/img/projects/project5.jpg", category: "Aluminio" },
+  { src: "/img/projects/project6.jpg", category: "PVC Termoacústico" },
+  { src: "/img/projects/project7.jpg", category: "PVC Termoacústico" },
+  { src: "/img/projects/project8.jpg", category: "PVC Termoacústico" },
+  { src: "/img/projects/project9.png", category: "PVC Termoacústico" },
+  { src: "/img/projects/project10.jpg", category: "PVC Termoacústico" },
+  { src: "/img/projects/project11.jpg", category: "Acero Inoxidable" },
+  { src: "/img/projects/project12.jpg", category: "Acero Inoxidable" },
+  { src: "/img/projects/project13.jpg", category: "Acero Inoxidable" },
+  { src: "/img/projects/project14.jpg", category: "Acero Inoxidable" },
+  { src: "/img/projects/project15.jpg", category: "Acero Inoxidable" },
+  { src: "/img/projects/project16.jpg", category: "Puerta de Ducha" },
+  { src: "/img/projects/project17.jpg", category: "Puerta de Ducha" },
+  { src: "/img/projects/project18.jpg", category: "Puerta de Ducha" },
+  { src: "/img/projects/project19.jpg", category: "Puerta de Ducha" },
+  { src: "/img/projects/project20.jpg", category: "Puerta de Ducha" },
+  { src: "/img/projects/project21.jpg", category: "Puerta de Ducha" },
 ];
 
 const perPage = 6;
-const projectPages: { src: string; label: string }[][] = [];
-for (let i = 0; i < projects.length; i += perPage) {
-  projectPages.push(projects.slice(i, i + perPage));
-}
 
 export default function Home() {
   const [current, setCurrent] = useState(0);
   const [projPage, setProjPage] = useState(0);
   const [selectedProj, setSelectedProj] = useState<number | null>(null);
   const [showAllMobile, setShowAllMobile] = useState(false);
+  const [activeCategory, setActiveCategory] = useState("Todos");
+
+  const filteredProjects =
+    activeCategory === "Todos"
+      ? projects
+      : projects.filter((p) => p.category === activeCategory);
+
+  const filteredPages: { src: string; category: string }[][] = [];
+  for (let i = 0; i < filteredProjects.length; i += perPage) {
+    filteredPages.push(filteredProjects.slice(i, i + perPage));
+  }
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -176,13 +191,16 @@ export default function Home() {
     const handler = (e: KeyboardEvent) => {
       if (e.key === "Escape") setSelectedProj(null);
       if (e.key === "ArrowRight")
-        setSelectedProj((selectedProj + 1) % projects.length);
+        setSelectedProj((selectedProj + 1) % filteredProjects.length);
       if (e.key === "ArrowLeft")
-        setSelectedProj((selectedProj - 1 + projects.length) % projects.length);
+        setSelectedProj(
+          (selectedProj - 1 + filteredProjects.length) %
+            filteredProjects.length,
+        );
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [selectedProj]);
+  }, [selectedProj, filteredProjects.length]);
 
   return (
     <>
@@ -334,7 +352,7 @@ export default function Home() {
       {/* Proyectos Section */}
       <section id="proyectos" className="py-20 sm:py-28 bg-[#1a1a2e]">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <span className="inline-block text-xs uppercase tracking-[0.25em] text-brand font-semibold mb-4">
               Proyectos
             </span>
@@ -348,48 +366,60 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Mobile: all projects stacked vertically */}
+          {/* Category Tabs */}
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => {
+                  setActiveCategory(cat);
+                  setProjPage(0);
+                  setShowAllMobile(false);
+                }}
+                className={`px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ${
+                  activeCategory === cat
+                    ? "bg-brand text-white shadow-lg shadow-brand/20"
+                    : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/10"
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+
+          {/* Mobile: projects */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:hidden">
-            {(showAllMobile ? projects : projects.slice(0, 4)).map(
-              (proj, i) => (
-                <div
-                  key={i}
-                  onClick={() => setSelectedProj(i)}
-                  className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-gray-800 cursor-pointer"
-                >
-                  <Image
-                    src={proj.src}
-                    alt={`Proyecto de ${proj.label}`}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5">
-                    <span className="inline-block px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white bg-brand/80 rounded-full">
-                      {proj.label}
-                    </span>
-                  </div>
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                      <svg
-                        className="w-5 h-5 text-white"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                        />
-                      </svg>
-                    </div>
+            {(showAllMobile
+              ? filteredProjects
+              : filteredProjects.slice(0, 4)
+            ).map((proj, i) => (
+              <div
+                key={proj.src}
+                onClick={() => setSelectedProj(i)}
+                className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-gray-800 cursor-pointer"
+              >
+                <Image
+                  src={proj.src}
+                  alt={`Proyecto - ${proj.category}`}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <span className="inline-block px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white bg-brand/80 rounded-full">
+                    {proj.category}
+                  </span>
+                </div>
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                    <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
                   </div>
                 </div>
-              ),
-            )}
-            {!showAllMobile && projects.length > 4 && (
+              </div>
+            ))}
+            {!showAllMobile && filteredProjects.length > 4 && (
               <div className="col-span-full flex justify-center mt-2">
                 <button
                   onClick={() => setShowAllMobile(true)}
@@ -401,49 +431,36 @@ export default function Home() {
             )}
           </div>
 
-          {/* Desktop: carousel with 6 visible at a time */}
+          {/* Desktop: carousel */}
           <div className="hidden lg:block overflow-hidden">
             <div
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${projPage * 100}%)` }}
             >
-              {projectPages.map((group, gi) => (
-                <div
-                  key={gi}
-                  className="grid grid-cols-3 gap-6 min-w-0 w-full shrink-0"
-                >
+              {filteredPages.map((group, gi) => (
+                <div key={gi} className="grid grid-cols-3 gap-6 min-w-0 w-full shrink-0">
                   {group.map((proj, i) => (
                     <div
-                      key={i}
+                      key={proj.src}
                       onClick={() => setSelectedProj(gi * perPage + i)}
                       className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-gray-800 cursor-pointer"
                     >
                       <Image
                         src={proj.src}
-                        alt={`Proyecto de ${proj.label}`}
+                        alt={`Proyecto - ${proj.category}`}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                       <div className="absolute bottom-0 left-0 right-0 p-5">
                         <span className="inline-block px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white bg-brand/80 rounded-full">
-                          {proj.label}
+                          {proj.category}
                         </span>
                       </div>
                       <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                          <svg
-                            className="w-5 h-5 text-white"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                            />
+                          <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                           </svg>
                         </div>
                       </div>
@@ -453,62 +470,42 @@ export default function Home() {
               ))}
             </div>
           </div>
-          {/* Desktop pagination controls */}
-          <div className="hidden lg:flex items-center justify-center gap-4 mt-8">
-            <button
-              onClick={() => setProjPage(Math.max(0, projPage - 1))}
-              disabled={projPage === 0}
-              className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
-            >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
+          {/* Desktop pagination */}
+          {filteredPages.length > 1 && (
+            <div className="hidden lg:flex items-center justify-center gap-4 mt-8">
+              <button
+                onClick={() => setProjPage(Math.max(0, projPage - 1))}
+                disabled={projPage === 0}
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
-            </button>
-            <div className="flex gap-2">
-              {projectPages.map((_, gi) => (
-                <button
-                  key={gi}
-                  onClick={() => setProjPage(gi)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                    gi === projPage
-                      ? "bg-brand w-6"
-                      : "bg-white/30 hover:bg-white/50"
-                  }`}
-                />
-              ))}
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <div className="flex gap-2">
+                {filteredPages.map((_, gi) => (
+                  <button
+                    key={gi}
+                    onClick={() => setProjPage(gi)}
+                    className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                      gi === projPage
+                        ? "bg-brand w-6"
+                        : "bg-white/30 hover:bg-white/50"
+                    }`}
+                  />
+                ))}
+              </div>
+              <button
+                onClick={() => setProjPage(Math.min(filteredPages.length - 1, projPage + 1))}
+                disabled={projPage === filteredPages.length - 1}
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+              >
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
             </div>
-            <button
-              onClick={() =>
-                setProjPage(Math.min(projectPages.length - 1, projPage + 1))
-              }
-              disabled={projPage === projectPages.length - 1}
-              className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
-            >
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </button>
-          </div>
+          )}
         </div>
       </section>
 
@@ -885,7 +882,7 @@ export default function Home() {
             onClick={(e) => {
               e.stopPropagation();
               setSelectedProj(
-                (selectedProj - 1 + projects.length) % projects.length,
+                (selectedProj - 1 + filteredProjects.length) % filteredProjects.length,
               );
             }}
             className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-10"
@@ -910,8 +907,8 @@ export default function Home() {
             onClick={(e) => e.stopPropagation()}
           >
             <Image
-              src={projects[selectedProj].src}
-              alt={`Proyecto de ${projects[selectedProj].label}`}
+              src={filteredProjects[selectedProj].src}
+              alt={`Proyecto - ${filteredProjects[selectedProj].category}`}
               fill
               className="object-contain"
               priority
@@ -921,7 +918,7 @@ export default function Home() {
           <button
             onClick={(e) => {
               e.stopPropagation();
-              setSelectedProj((selectedProj + 1) % projects.length);
+              setSelectedProj((selectedProj + 1) % filteredProjects.length);
             }}
             className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors z-10"
           >
@@ -941,8 +938,8 @@ export default function Home() {
           </button>
 
           <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-black/60 px-4 py-2 rounded-full text-white text-sm">
-            {selectedProj + 1} / {projects.length} &mdash;{" "}
-            {projects[selectedProj].label}
+            {selectedProj + 1} / {filteredProjects.length} &mdash;{" "}
+            {filteredProjects[selectedProj].category}
           </div>
         </div>
       )}
