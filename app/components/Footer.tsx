@@ -11,7 +11,7 @@ const enlaces = [
   { label: "Inicio", href: "/" },
   { label: "Servicios", href: "/#servicios" },
   { label: "Nosotros", href: "/#nosotros" },
-  { label: "Proyectos", href: "/#proyectos" },
+  { label: "Proyectos", href: "/proyectos" },
   { label: "Cotizar", href: "/#cotizar" },
 ];
 

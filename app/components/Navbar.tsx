@@ -15,7 +15,7 @@ const menuItems = [
       { label: "Puerta de Ducha", href: "/servicios/puerta-de-ducha" },
     ],
   },
-  { label: "Proyectos", href: "/#proyectos" },
+  { label: "Proyectos", href: "/proyectos" },
   { label: "Nosotros", href: "/#nosotros" },
 ];
 
