@@ -562,19 +562,19 @@ export default function Home() {
           </div>
 
           {/* Línea de proceso - Desktop */}
-          <div className="hidden lg:block relative mb-16">
+          <div className="hidden lg:block relative mb-16 group/process">
             {/* Línea horizontal conectora */}
-            <div className="absolute top-[47px] left-[10%] right-[10%] h-[2px] bg-gray-900 z-0" />
+            <div className="absolute top-[47px] left-[10%] right-[10%] h-[2px] bg-gray-900 z-0 transition-opacity duration-500 group-hover/process:opacity-0" />
             {/* Puntos dorados entre pasos */}
             {[20, 30, 40, 50, 60, 70, 80].map((pos) => (
               <div
                 key={pos}
-                className="absolute top-[46px] w-1.5 h-1.5 rounded-full bg-brand z-0"
+                className="absolute top-[46px] w-1.5 h-1.5 rounded-full bg-brand z-0 transition-opacity duration-500 group-hover/process:opacity-0"
                 style={{ left: `${pos}%`, transform: "translateX(-50%)" }}
               />
             ))}
 
-            <div className="grid grid-cols-5 gap-6 relative z-10">
+            <div className="grid grid-cols-5 gap-6 relative z-10 group/process">
               {[
                 {
                   num: "01",
@@ -619,7 +619,7 @@ export default function Home() {
               ].map((step, i) => (
                 <div
                   key={step.num}
-                  className="flex flex-col items-center text-center h-full animate-slide-right"
+                  className="flex flex-col items-center text-center h-full animate-slide-right transition-all duration-500 group-hover/process:opacity-40 group-hover/process:scale-[0.97] hover:!opacity-100 hover:!scale-110 hover:z-20 relative cursor-pointer"
                   style={{ animationDelay: `${0.15 + i * 0.12}s` }}
                 >
                   {/* Número */}
@@ -666,17 +666,17 @@ export default function Home() {
           </div>
 
           {/* Línea de proceso - Tablet */}
-          <div className="hidden md:block lg:hidden relative mb-16">
-            <div className="absolute top-[39px] left-[8%] right-[8%] h-[2px] bg-gray-900 z-0" />
+          <div className="hidden md:block lg:hidden relative mb-16 group/process">
+            <div className="absolute top-[39px] left-[8%] right-[8%] h-[2px] bg-gray-900 z-0 transition-opacity duration-500 group-hover/process:opacity-0" />
             {[15, 27, 40, 53, 66, 79, 88].map((pos) => (
               <div
                 key={pos}
-                className="absolute top-[38px] w-1.5 h-1.5 rounded-full bg-brand z-0"
+                className="absolute top-[38px] w-1.5 h-1.5 rounded-full bg-brand z-0 transition-opacity duration-500 group-hover/process:opacity-0"
                 style={{ left: `${pos}%`, transform: "translateX(-50%)" }}
               />
             ))}
 
-            <div className="grid grid-cols-5 gap-3 relative z-10">
+            <div className="grid grid-cols-5 gap-3 relative z-10 group/process">
               {[
                 {
                   num: "01",
@@ -721,7 +721,7 @@ export default function Home() {
               ].map((step, i) => (
                 <div
                   key={step.num}
-                  className="flex flex-col items-center text-center h-full animate-slide-right"
+                  className="flex flex-col items-center text-center h-full animate-slide-right transition-all duration-500 group-hover/process:opacity-40 group-hover/process:scale-[0.97] hover:!opacity-100 hover:!scale-110 hover:z-20 relative cursor-pointer"
                   style={{ animationDelay: `${0.15 + i * 0.12}s` }}
                 >
                   <div className="relative z-10 mb-4">
@@ -763,7 +763,7 @@ export default function Home() {
           </div>
 
           {/* Mobile: vertical layout */}
-          <div className="md:hidden space-y-10 overflow-hidden">
+          <div className="md:hidden space-y-10 overflow-hidden group/process">
             {[
               {
                 num: "01",
@@ -808,7 +808,7 @@ export default function Home() {
             ].map((step, i) => (
               <div
                 key={step.num}
-                className="flex gap-4 items-start animate-slide-right"
+                className="flex gap-4 items-start animate-slide-right transition-all duration-500 group-hover/process:opacity-40 group-hover/process:scale-[0.97] hover:!opacity-100 hover:!scale-110 hover:z-20 relative cursor-pointer"
                 style={{ animationDelay: `${0.1 + i * 0.1}s` }}
               >
                 {/* Línea vertical + círculo */}
@@ -825,7 +825,7 @@ export default function Home() {
                     </div>
                   </div>
                   {i < 4 && (
-                    <div className="w-[2px] h-full min-h-[20px] bg-gradient-to-b from-gray-900 to-gray-300 mt-2" />
+                    <div className="w-[2px] h-full min-h-[20px] bg-gradient-to-b from-gray-900 to-gray-300 mt-2 transition-opacity duration-500 group-hover/process:opacity-0" />
                   )}
                 </div>
 
