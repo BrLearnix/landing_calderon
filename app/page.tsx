@@ -540,6 +540,313 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Proceso Section */}
+      <section className="py-20 sm:py-28 bg-white relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-brand/5 rounded-full -translate-y-1/3 -translate-x-1/3 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-brand/[0.03] rounded-full translate-y-1/3 translate-x-1/4 blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative">
+          <div className="text-center mb-16 sm:mb-20">
+            <span className="inline-block text-xs uppercase tracking-[0.25em] text-brand font-semibold mb-4 animate-fade-up">
+              Nuestro Proceso
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+              Así trabajamos en<br />
+              <span className="text-brand">CALDERON</span>{" "}
+              <span className="text-gray-900">GROUP S.A.C.</span>
+            </h2>
+            <p className="text-gray-500 leading-relaxed max-w-3xl mx-auto animate-fade-up" style={{ animationDelay: "0.2s" }}>
+              Seguimos un proceso claro y profesional para garantizar
+              calidad, cumplimiento y satisfacción en cada proyecto.
+            </p>
+          </div>
+
+          {/* Línea de proceso - Desktop */}
+          <div className="hidden lg:block relative mb-16">
+            {/* Línea horizontal conectora */}
+            <div className="absolute top-[47px] left-[10%] right-[10%] h-[2px] bg-gray-900 z-0" />
+            {/* Puntos dorados entre pasos */}
+            {[20, 30, 40, 50, 60, 70, 80].map((pos) => (
+              <div
+                key={pos}
+                className="absolute top-[46px] w-1.5 h-1.5 rounded-full bg-brand z-0"
+                style={{ left: `${pos}%`, transform: "translateX(-50%)" }}
+              />
+            ))}
+
+            <div className="grid grid-cols-5 gap-6 relative z-10">
+              {[
+                {
+                  num: "01",
+                  title: "Asesoría",
+                  subtitle: "y Visita Técnica",
+                  desc: "Escuchamos tus necesidades, evaluamos tu proyecto y tomamos medidas precisas en obra.",
+                  img: "/img/fases/etapa1.png",
+                  alt: "Asesoría",
+                },
+                {
+                  num: "02",
+                  title: "Diseño",
+                  subtitle: "y Cotización",
+                  desc: "Desarrollamos el diseño y te enviamos una propuesta técnica y económica personalizada.",
+                  img: "/img/fases/etapa2.png",
+                  alt: "Diseño",
+                },
+                {
+                  num: "03",
+                  title: "Fabricación",
+                  subtitle: "",
+                  desc: "Fabricamos cada estructura con materiales certificados y maquinaria especializada asegurando precisión y durabilidad.",
+                  img: "/img/fases/etapa3.png",
+                  alt: "Fabricación",
+                },
+                {
+                  num: "04",
+                  title: "Instalación",
+                  subtitle: "Profesional",
+                  desc: "Nuestro equipo instala con precisión, limpieza y altos estándares de calidad, cumpliendo los plazos acordados.",
+                  img: "/img/fases/etapa4.png",
+                  alt: "Instalación",
+                },
+                {
+                  num: "05",
+                  title: "Entrega",
+                  subtitle: "y Garantía",
+                  desc: "Realizamos la inspección final, entregamos tu proyecto y brindamos garantía y soporte postventa.",
+                  img: "/img/fases/etapa5.png",
+                  alt: "Entrega",
+                },
+              ].map((step, i) => (
+                <div
+                  key={step.num}
+                  className="flex flex-col items-center text-center h-full animate-slide-right"
+                  style={{ animationDelay: `${0.15 + i * 0.12}s` }}
+                >
+                  {/* Número */}
+                    <div className="relative z-10 mb-4">
+                      <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 w-7 h-7 rounded-full bg-gray-900 flex items-center justify-center z-10 shadow-md shadow-gray-900/30">
+                        <span className="text-[11px] font-bold text-brand">{step.num}</span>
+                      </div>
+                      {/* Círculo con icono */}
+                      <div className="w-24 h-24 rounded-full bg-white border-2 border-brand/20 flex items-center justify-center shadow-sm hover:shadow-lg hover:border-brand/50 transition-all duration-300 hover:scale-110 group overflow-hidden">
+                      <img src={["/icons/chat-bubble.png", "/icons/illustration.png", "/icons/window.png", "/icons/worker.png", "/icons/shield.png"][i]} alt="" className="w-12 h-12 object-contain grayscale group-hover:grayscale-0 transition-all duration-300" />
+                    </div>
+                  </div>
+
+                  {/* Título */}
+                  <h4 className="font-bold text-gray-900 text-sm mt-4 leading-tight">
+                    {step.title}
+                  </h4>
+                  {step.subtitle && (
+                    <p className="text-xs text-brand font-semibold uppercase tracking-wider mb-3">
+                      {step.subtitle}
+                    </p>
+                  )}
+                  {!step.subtitle && <div className="mb-3" />}
+
+                  {/* Descripción */}
+                  <p className="text-gray-500 text-xs leading-relaxed mb-5 max-w-[200px]">
+                    {step.desc}
+                  </p>
+
+                  {/* Imagen */}
+                  <div className="w-full aspect-square rounded-2xl bg-gray-100 border border-gray-200 overflow-hidden group/img mt-auto">
+                    <img
+                      src={step.img || undefined}
+                      alt={step.alt}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Línea de proceso - Tablet */}
+          <div className="hidden md:block lg:hidden relative mb-16">
+            <div className="absolute top-[39px] left-[8%] right-[8%] h-[2px] bg-gray-900 z-0" />
+            {[15, 27, 40, 53, 66, 79, 88].map((pos) => (
+              <div
+                key={pos}
+                className="absolute top-[38px] w-1.5 h-1.5 rounded-full bg-brand z-0"
+                style={{ left: `${pos}%`, transform: "translateX(-50%)" }}
+              />
+            ))}
+
+            <div className="grid grid-cols-5 gap-3 relative z-10">
+              {[
+                {
+                  num: "01",
+                  title: "Asesoría",
+                  subtitle: "y Visita Técnica",
+                  desc: "Escuchamos tus necesidades, evaluamos tu proyecto y tomamos medidas precisas en obra.",
+                  img: "/img/fases/etapa1.png",
+                  alt: "Asesoría",
+                },
+                {
+                  num: "02",
+                  title: "Diseño",
+                  subtitle: "y Cotización",
+                  desc: "Desarrollamos el diseño y te enviamos una propuesta técnica y económica personalizada.",
+                  img: "/img/fases/etapa2.png",
+                  alt: "Diseño",
+                },
+                {
+                  num: "03",
+                  title: "Fabricación",
+                  subtitle: "",
+                  desc: "Fabricamos cada estructura con materiales certificados y maquinaria especializada.",
+                  img: "/img/fases/etapa3.png",
+                  alt: "Fabricación",
+                },
+                {
+                  num: "04",
+                  title: "Instalación",
+                  subtitle: "Profesional",
+                  desc: "Nuestro equipo instala con precisión, limpieza y altos estándares de calidad.",
+                  img: "/img/fases/etapa4.png",
+                  alt: "Instalación",
+                },
+                {
+                  num: "05",
+                  title: "Entrega",
+                  subtitle: "y Garantía",
+                  desc: "Realizamos la inspección final, entregamos tu proyecto y brindamos garantía y soporte.",
+                  img: "/img/fases/etapa5.png",
+                  alt: "Entrega",
+                },
+              ].map((step, i) => (
+                <div
+                  key={step.num}
+                  className="flex flex-col items-center text-center h-full animate-slide-right"
+                  style={{ animationDelay: `${0.15 + i * 0.12}s` }}
+                >
+                  <div className="relative z-10 mb-4">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-gray-900 flex items-center justify-center z-10 shadow-md shadow-gray-900/30">
+                      <span className="text-[10px] font-bold text-brand">{step.num}</span>
+                    </div>
+                    <div className="w-20 h-20 rounded-full bg-white border-2 border-brand/20 flex items-center justify-center shadow-sm hover:shadow-lg hover:border-brand/50 transition-all duration-300 hover:scale-110 group overflow-hidden">
+                      <img src={["/icons/chat-bubble.png", "/icons/illustration.png", "/icons/window.png", "/icons/worker.png", "/icons/shield.png"][i]} alt="" className="w-10 h-10 object-contain grayscale group-hover:grayscale-0 transition-all duration-300" />
+                    </div>
+                  </div>
+
+                  <h4 className="font-bold text-gray-900 text-xs mt-3 leading-tight">
+                    {step.title}
+                  </h4>
+                  {step.subtitle && (
+                    <p className="text-[10px] text-brand font-semibold uppercase tracking-wider mb-2">
+                      {step.subtitle}
+                    </p>
+                  )}
+                  {!step.subtitle && <div className="mb-2" />}
+
+                  <p className="text-gray-500 text-[10px] leading-relaxed mb-4 max-w-[160px]">
+                    {step.desc}
+                  </p>
+
+                  <div className="w-full aspect-square rounded-xl bg-gray-100 border border-gray-200 overflow-hidden group/img mt-auto">
+                    <img
+                      src={step.img || undefined}
+                      alt={step.alt}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile: vertical layout */}
+          <div className="md:hidden space-y-8">
+            {[
+              {
+                num: "01",
+                title: "Asesoría",
+                subtitle: "y Visita Técnica",
+                  desc: "Escuchamos tus necesidades, evaluamos tu proyecto y tomamos medidas precisas en obra.",
+                  img: "/img/fases/etapa1.png",
+                  alt: "Asesoría",
+              },
+              {
+                num: "02",
+                title: "Diseño",
+                subtitle: "y Cotización",
+                  desc: "Desarrollamos el diseño y te enviamos una propuesta técnica y económica personalizada.",
+                  img: "/img/fases/etapa2.png",
+                  alt: "Diseño",
+              },
+              {
+                num: "03",
+                title: "Fabricación",
+                subtitle: "",
+                desc: "Fabricamos cada estructura con materiales certificados y maquinaria especializada asegurando precisión y durabilidad.",
+                img: "/img/fases/etapa3.png",
+                alt: "Fabricación",
+              },
+              {
+                num: "04",
+                title: "Instalación",
+                subtitle: "Profesional",
+                desc: "Nuestro equipo instala con precisión, limpieza y altos estándares de calidad, cumpliendo los plazos acordados.",
+                img: "/img/fases/etapa4.png",
+                alt: "Instalación",
+              },
+              {
+                num: "05",
+                title: "Entrega",
+                subtitle: "y Garantía",
+                desc: "Realizamos la inspección final, entregamos tu proyecto y brindamos garantía y soporte postventa.",
+                img: "/img/fases/etapa5.png",
+                alt: "Entrega",
+              },
+            ].map((step, i) => (
+              <div
+                key={step.num}
+                className="flex gap-5 items-start animate-slide-right"
+                style={{ animationDelay: `${0.1 + i * 0.1}s` }}
+              >
+                {/* Línea vertical + círculo */}
+                <div className="flex flex-col items-center shrink-0">
+                  <div className="relative z-10">
+                    <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-gray-900 flex items-center justify-center z-10 shadow-md shadow-gray-900/30">
+                      <span className="text-[10px] font-bold text-brand">{step.num}</span>
+                    </div>
+                    <div className="w-20 h-20 rounded-full bg-white border-2 border-brand/20 flex items-center justify-center shadow-sm overflow-hidden">
+                      <img src={["/icons/chat-bubble.png", "/icons/illustration.png", "/icons/window.png", "/icons/worker.png", "/icons/shield.png"][i]} alt="" className="w-10 h-10 object-contain grayscale" />
+                    </div>
+                  </div>
+                  {i < 4 && (
+                    <div className="w-[2px] h-full min-h-[20px] bg-gradient-to-b from-gray-900 to-gray-300 mt-2" />
+                  )}
+                </div>
+
+                {/* Contenido */}
+                <div className="flex-1 pt-1">
+                  <h4 className="font-bold text-gray-900 text-base leading-tight">
+                    {step.title}
+                  </h4>
+                  {step.subtitle && (
+                    <p className="text-xs text-brand font-semibold uppercase tracking-wider mb-2">
+                      {step.subtitle}
+                    </p>
+                  )}
+                  <p className="text-gray-500 text-sm leading-relaxed mb-4">
+                    {step.desc}
+                  </p>
+                  <div className="w-full aspect-[16/9] rounded-2xl bg-gray-100 border border-gray-200 overflow-hidden group/img h-[220px]">
+                    <img
+                      src={step.img || undefined}
+                      alt={step.alt}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Cotizar Section */}
       <section id="cotizar" className="py-20 sm:py-28 bg-[#0f0f1a]">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
