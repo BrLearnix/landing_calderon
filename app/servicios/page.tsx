@@ -53,7 +53,7 @@ export default function ServiciosPage() {
           </span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-6">
             Soluciones de{" "}
-            <span className="text-brand">Instalación metálica y PVC</span>
+            <span className="text-brand">Instalación en Sistemas de Aluminio y PVC Antiruido</span>
           </h1>
           <p className="text-gray-400 max-w-2xl mx-auto">
             Soluciones en aluminio, PVC termoacústico, acero inoxidable y
