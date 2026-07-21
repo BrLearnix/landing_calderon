@@ -555,7 +555,7 @@ export default function Home() {
               <span className="text-brand">CALDERON</span>{" "}
               <span className="text-gray-900">GROUP S.A.C.</span>
             </h2>
-            <p className="text-gray-500 leading-relaxed max-w-3xl mx-auto animate-fade-up" style={{ animationDelay: "0.2s" }}>
+            <p className="text-gray-500 leading-relaxed max-w-3xl mx-auto animate-fade-up mb-12 sm:mb-6" style={{ animationDelay: "0.2s" }}>
               Seguimos un proceso claro y profesional para garantizar
               calidad, cumplimiento y satisfacción en cada proyecto.
             </p>
@@ -624,13 +624,16 @@ export default function Home() {
                 >
                   {/* Número */}
                     <div className="relative z-10 mb-4">
-                      <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 w-7 h-7 rounded-full bg-gray-900 flex items-center justify-center z-10 shadow-md shadow-gray-900/30">
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-gray-900 ring-4 ring-white flex items-center justify-center z-30">
                         <span className="text-[11px] font-bold text-brand">{step.num}</span>
                       </div>
                       {/* Círculo con icono */}
-                      <div className="w-24 h-24 rounded-full bg-white border-2 border-brand/20 flex items-center justify-center shadow-sm hover:shadow-lg hover:border-brand/50 transition-all duration-300 hover:scale-110 group overflow-hidden">
-                      <img src={["/icons/chat-bubble.png", "/icons/illustration.png", "/icons/window.png", "/icons/worker.png", "/icons/shield.png"][i]} alt="" className="w-12 h-12 object-contain grayscale group-hover:grayscale-0 transition-all duration-300" />
-                    </div>
+                      <div className="w-24 h-24 rounded-full relative flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-500 hover:scale-110 group overflow-hidden">
+                        <div className="absolute inset-0 rounded-full bg-brand z-0 transition-colors duration-500" />
+                        <div className="absolute top-0 right-0 w-1/2 h-full bg-gray-900 rounded-r-full z-[1] group-hover:bg-brand transition-colors duration-500" />
+                        <div className="absolute inset-[2px] rounded-full bg-white z-10" />
+                        <img src={["/icons/chat-bubble.png", "/icons/illustration.png", "/icons/window.png", "/icons/worker.png", "/icons/shield.png"][i]} alt="" className="relative z-20 w-12 h-12 object-contain grayscale group-hover:grayscale-0 transition-all duration-500" />
+                      </div>
                   </div>
 
                   {/* Título */}
@@ -722,11 +725,14 @@ export default function Home() {
                   style={{ animationDelay: `${0.15 + i * 0.12}s` }}
                 >
                   <div className="relative z-10 mb-4">
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-gray-900 flex items-center justify-center z-10 shadow-md shadow-gray-900/30">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-gray-900 ring-4 ring-white flex items-center justify-center z-30">
                       <span className="text-[10px] font-bold text-brand">{step.num}</span>
                     </div>
-                    <div className="w-20 h-20 rounded-full bg-white border-2 border-brand/20 flex items-center justify-center shadow-sm hover:shadow-lg hover:border-brand/50 transition-all duration-300 hover:scale-110 group overflow-hidden">
-                      <img src={["/icons/chat-bubble.png", "/icons/illustration.png", "/icons/window.png", "/icons/worker.png", "/icons/shield.png"][i]} alt="" className="w-10 h-10 object-contain grayscale group-hover:grayscale-0 transition-all duration-300" />
+                    <div className="w-20 h-20 rounded-full relative flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-500 hover:scale-110 group overflow-hidden">
+                      <div className="absolute inset-0 rounded-full bg-brand z-0 transition-colors duration-500" />
+                      <div className="absolute top-0 right-0 w-1/2 h-full bg-gray-900 rounded-r-full z-[1] group-hover:bg-brand transition-colors duration-500" />
+                      <div className="absolute inset-[2px] rounded-full bg-white z-10" />
+                      <img src={["/icons/chat-bubble.png", "/icons/illustration.png", "/icons/window.png", "/icons/worker.png", "/icons/shield.png"][i]} alt="" className="relative z-20 w-10 h-10 object-contain grayscale group-hover:grayscale-0 transition-all duration-500" />
                     </div>
                   </div>
 
@@ -757,7 +763,7 @@ export default function Home() {
           </div>
 
           {/* Mobile: vertical layout */}
-          <div className="md:hidden space-y-8">
+          <div className="md:hidden space-y-10 overflow-hidden">
             {[
               {
                 num: "01",
@@ -802,17 +808,20 @@ export default function Home() {
             ].map((step, i) => (
               <div
                 key={step.num}
-                className="flex gap-5 items-start animate-slide-right"
+                className="flex gap-4 items-start animate-slide-right"
                 style={{ animationDelay: `${0.1 + i * 0.1}s` }}
               >
                 {/* Línea vertical + círculo */}
-                <div className="flex flex-col items-center shrink-0">
+                <div className="flex flex-col items-center shrink-0 pt-4">
                   <div className="relative z-10">
-                    <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 w-6 h-6 rounded-full bg-gray-900 flex items-center justify-center z-10 shadow-md shadow-gray-900/30">
-                      <span className="text-[10px] font-bold text-brand">{step.num}</span>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-gray-900 ring-3 ring-white flex items-center justify-center z-30">
+                      <span className="text-[9px] font-bold text-brand">{step.num}</span>
                     </div>
-                    <div className="w-20 h-20 rounded-full bg-white border-2 border-brand/20 flex items-center justify-center shadow-sm overflow-hidden">
-                      <img src={["/icons/chat-bubble.png", "/icons/illustration.png", "/icons/window.png", "/icons/worker.png", "/icons/shield.png"][i]} alt="" className="w-10 h-10 object-contain grayscale" />
+                    <div className="w-16 h-16 rounded-full relative flex items-center justify-center shadow-sm overflow-hidden">
+                      <div className="absolute inset-0 rounded-full bg-brand z-0" />
+                      <div className="absolute top-0 right-0 w-1/2 h-full bg-gray-900 rounded-r-full z-[1] transition-colors duration-500" />
+                      <div className="absolute inset-[2px] rounded-full bg-white z-10" />
+                      <img src={["/icons/chat-bubble.png", "/icons/illustration.png", "/icons/window.png", "/icons/worker.png", "/icons/shield.png"][i]} alt="" className="relative z-20 w-8 h-8 object-contain grayscale" />
                     </div>
                   </div>
                   {i < 4 && (
@@ -821,7 +830,7 @@ export default function Home() {
                 </div>
 
                 {/* Contenido */}
-                <div className="flex-1 pt-1">
+                <div className="flex-1 pt-1 min-w-0">
                   <h4 className="font-bold text-gray-900 text-base leading-tight">
                     {step.title}
                   </h4>
@@ -833,7 +842,7 @@ export default function Home() {
                   <p className="text-gray-500 text-sm leading-relaxed mb-4">
                     {step.desc}
                   </p>
-                  <div className="w-full aspect-[16/9] rounded-2xl bg-gray-100 border border-gray-200 overflow-hidden group/img h-[220px]">
+                  <div className="w-full rounded-2xl bg-gray-100 border border-gray-200 overflow-hidden group/img h-[200px]">
                     <img
                       src={step.img || undefined}
                       alt={step.alt}
