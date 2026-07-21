@@ -131,7 +131,7 @@ const fortalezas = [
 
 const projectCategories = [
   {
-    title: "Aluminio",
+    title: "Sistemas en Aluminio de Alta Gama",
     slug: "aluminio",
     image: "/img/projects/project1.jpg",
     description:

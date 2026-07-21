@@ -31,13 +31,15 @@ export default function AluminioPage() {
               Servicio
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-6 leading-[1.1]">
-              <span className="text-brand">Aluminio</span>
+              <span className="text-brand">
+                Sistemas en Aluminio de Alta Gama
+              </span>
             </h1>
             <p className="text-gray-400 leading-relaxed mb-8">
               Ventanas, puertas, mamparas y fachadas de aluminio fabricadas a
               medida. Perfiles con rotura de puente térmico y acabados en
-              anodizado, lacado, texturado madera o color RAL. Solidez, estilo
-              y aislamiento en un solo material.
+              anodizado, lacado, texturado madera o color RAL. Solidez, estilo y
+              aislamiento en un solo material.
             </p>
             <a
               href="/#cotizar"

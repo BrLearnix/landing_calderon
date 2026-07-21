@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const servicios = [
   {
-    title: "Aluminio",
+    title: "Sistemas en Aluminio de Alta Gama",
     href: "/servicios/aluminio",
     img: "/img/services/aluminio/img1.jpg",
     description:
