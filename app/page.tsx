@@ -134,21 +134,24 @@ const projectCategories = [
     title: "Aluminio",
     slug: "aluminio",
     image: "/img/projects/project1.jpg",
-    description: "Ventanas, puertas, mamparas y fachadas de aluminio con rotura de puente térmico.",
+    description:
+      "Ventanas, puertas, mamparas y fachadas de aluminio con rotura de puente térmico.",
     count: 5,
   },
   {
     title: "PVC Termoacústico",
     slug: "pvc-termoacustico",
     image: "/img/projects/project6.jpg",
-    description: "Ventanas y puertas en PVC con aislamiento térmico y acústico premium.",
+    description:
+      "Ventanas y puertas en PVC con aislamiento térmico y acústico premium.",
     count: 5,
   },
   {
     title: "Acero Inoxidable",
     slug: "acero-inoxidable",
     image: "/img/projects/project11.jpg",
-    description: "Barandas, pasamanos, cocinas y escaleras en acero inoxidable.",
+    description:
+      "Barandas, pasamanos, cocinas y escaleras en acero inoxidable.",
     count: 5,
   },
   {
@@ -162,11 +165,19 @@ const projectCategories = [
 
 export default function Home() {
   const [current, setCurrent] = useState(0);
+  const [currentProcess, setCurrentProcess] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % backgrounds.length);
     }, 6000);
+    return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentProcess((prev) => (prev + 1) % backgrounds.length);
+    }, 4000);
     return () => clearInterval(timer);
   }, []);
 
@@ -360,8 +371,18 @@ export default function Home() {
                       </p>
                     </div>
                     <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center shrink-0 group-hover:bg-brand group-hover:translate-x-1 transition-all duration-300">
-                      <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      <svg
+                        className="w-5 h-5 text-white"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
                       </svg>
                     </div>
                   </div>
@@ -380,10 +401,16 @@ export default function Home() {
       {/* Nosotros Section */}
       <section
         id="nosotros"
-        className="py-20 sm:py-28 bg-[#f8f8fc] relative overflow-hidden"
+        className="py-20 sm:py-28 relative overflow-hidden"
       >
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand/5 rounded-full -translate-y-1/3 translate-x-1/3 blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand/[0.03] rounded-full translate-y-1/3 -translate-x-1/4 blur-3xl pointer-events-none" />
+        <img
+          src="/img/backgrounds/background1.jpg"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-white/95" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(234,179,8,0.08),transparent_70%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(234,179,8,0.06),transparent_70%)]" />
 
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative">
           <div className="text-center mb-20">
@@ -532,32 +559,73 @@ export default function Home() {
             </div>
 
             <p className="text-gray-500 leading-relaxed text-center">
-              Son los valores que nos guían para brindar soluciones
-              confiables, seguras y duraderas, superando las expectativas de
-              nuestros clientes en cada proyecto.
+              Son los valores que nos guían para brindar soluciones confiables,
+              seguras y duraderas, superando las expectativas de nuestros
+              clientes en cada proyecto.
             </p>
           </div>
         </div>
       </section>
 
+      {/* Ribbon Separator */}
+      <div className="relative py-3 bg-gray-900 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(234,179,8,0.15),transparent_70%)]" />
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand/40 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand/40 to-transparent" />
+        <div className="flex items-center justify-center gap-6">
+          <div className="hidden sm:block h-px flex-1 max-w-[200px] bg-gradient-to-r from-transparent to-brand/50" />
+          <div className="flex items-center gap-3">
+            <div className="w-2 h-2 rounded-full bg-brand" />
+            <span className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand font-bold whitespace-nowrap">
+              Calderon Group S.A.C.
+            </span>
+            <div className="w-2 h-2 rounded-full bg-brand" />
+          </div>
+          <div className="hidden sm:block h-px flex-1 max-w-[200px] bg-gradient-to-l from-transparent to-brand/50" />
+        </div>
+        <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-y-1/2" />
+      </div>
+
       {/* Proceso Section */}
-      <section className="py-20 sm:py-28 bg-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-brand/5 rounded-full -translate-y-1/3 -translate-x-1/3 blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-brand/[0.03] rounded-full translate-y-1/3 translate-x-1/4 blur-3xl pointer-events-none" />
+      <section className="py-20 sm:py-28 relative overflow-hidden">
+        {backgrounds.map((src, i) => (
+          <img
+            key={src}
+            src={src}
+            alt=""
+            className={`absolute inset-0 w-full h-full object-cover transition-all duration-[1200ms] ${
+              i === currentProcess
+                ? "opacity-60 translate-x-0"
+                : i < currentProcess
+                  ? "opacity-0 -translate-x-full"
+                  : "opacity-0 translate-x-full"
+            }`}
+          />
+        ))}
+        <div className="absolute inset-0 bg-white/80" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(234,179,8,0.08),transparent_70%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(234,179,8,0.06),transparent_70%)]" />
 
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative">
           <div className="text-center mb-16 sm:mb-20">
             <span className="inline-block text-xs uppercase tracking-[0.25em] text-brand font-semibold mb-4 animate-fade-up">
               Nuestro Proceso
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight mb-6 animate-fade-up" style={{ animationDelay: "0.1s" }}>
-              Así trabajamos en<br />
+            <h2
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight mb-6 animate-fade-up"
+              style={{ animationDelay: "0.1s" }}
+            >
+              Así trabajamos en
+              <br />
               <span className="text-brand">CALDERON</span>{" "}
               <span className="text-gray-900">GROUP S.A.C.</span>
             </h2>
-            <p className="text-gray-500 leading-relaxed max-w-3xl mx-auto animate-fade-up mb-12 sm:mb-6" style={{ animationDelay: "0.2s" }}>
-              Seguimos un proceso claro y profesional para garantizar
-              calidad, cumplimiento y satisfacción en cada proyecto.
+            <p
+              className="text-gray-500 leading-relaxed max-w-3xl mx-auto animate-fade-up mb-12 sm:mb-6"
+              style={{ animationDelay: "0.2s" }}
+            >
+              Seguimos un proceso claro y profesional para garantizar calidad,
+              cumplimiento y satisfacción en cada proyecto.
             </p>
           </div>
 
@@ -588,7 +656,7 @@ export default function Home() {
                   num: "02",
                   title: "Diseño",
                   subtitle: "y Cotización",
-                  desc: "Desarrollamos el diseño y te enviamos una propuesta técnica y económica personalizada.",
+                  desc: "Creamos un diseño único adaptado a tu espacio y necesidades, con una cotización accesible, transparente y negociable según tu presupuesto.",
                   img: "/img/fases/etapa2.png",
                   alt: "Diseño",
                 },
@@ -623,17 +691,31 @@ export default function Home() {
                   style={{ animationDelay: `${0.15 + i * 0.12}s` }}
                 >
                   {/* Número */}
-                    <div className="relative z-10 mb-4">
-                      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-gray-900 ring-4 ring-white flex items-center justify-center z-30">
-                        <span className="text-[11px] font-bold text-brand">{step.num}</span>
-                      </div>
-                      {/* Círculo con icono */}
-                      <div className="w-24 h-24 rounded-full relative flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-500 hover:scale-110 group overflow-hidden">
-                        <div className="absolute inset-0 rounded-full bg-brand z-0 transition-colors duration-500" />
-                        <div className="absolute top-0 right-0 w-1/2 h-full bg-gray-900 rounded-r-full z-[1] group-hover:bg-brand transition-colors duration-500" />
-                        <div className="absolute inset-[2px] rounded-full bg-white z-10" />
-                        <img src={["/icons/chat-bubble.png", "/icons/illustration.png", "/icons/window.png", "/icons/worker.png", "/icons/shield.png"][i]} alt="" className="relative z-20 w-12 h-12 object-contain grayscale group-hover:grayscale-0 transition-all duration-500" />
-                      </div>
+                  <div className="relative z-10 mb-4">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-gray-900 ring-4 ring-white flex items-center justify-center z-30">
+                      <span className="text-[11px] font-bold text-brand">
+                        {step.num}
+                      </span>
+                    </div>
+                    {/* Círculo con icono */}
+                    <div className="w-24 h-24 rounded-full relative flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-500 hover:scale-110 group overflow-hidden">
+                      <div className="absolute inset-0 rounded-full bg-brand z-0 transition-colors duration-500" />
+                      <div className="absolute top-0 right-0 w-1/2 h-full bg-gray-900 rounded-r-full z-[1] group-hover:bg-brand transition-colors duration-500" />
+                      <div className="absolute inset-[2px] rounded-full bg-white z-10" />
+                      <img
+                        src={
+                          [
+                            "/icons/chat-bubble.png",
+                            "/icons/illustration.png",
+                            "/icons/window.png",
+                            "/icons/worker.png",
+                            "/icons/shield.png",
+                          ][i]
+                        }
+                        alt=""
+                        className="relative z-20 w-12 h-12 object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+                      />
+                    </div>
                   </div>
 
                   {/* Título */}
@@ -690,7 +772,7 @@ export default function Home() {
                   num: "02",
                   title: "Diseño",
                   subtitle: "y Cotización",
-                  desc: "Desarrollamos el diseño y te enviamos una propuesta técnica y económica personalizada.",
+                  desc: "Creamos un diseño único adaptado a tu espacio y necesidades, con una cotización accesible, transparente y negociable según tu presupuesto.",
                   img: "/img/fases/etapa2.png",
                   alt: "Diseño",
                 },
@@ -726,13 +808,27 @@ export default function Home() {
                 >
                   <div className="relative z-10 mb-4">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-gray-900 ring-4 ring-white flex items-center justify-center z-30">
-                      <span className="text-[10px] font-bold text-brand">{step.num}</span>
+                      <span className="text-[10px] font-bold text-brand">
+                        {step.num}
+                      </span>
                     </div>
                     <div className="w-20 h-20 rounded-full relative flex items-center justify-center shadow-sm hover:shadow-lg transition-all duration-500 hover:scale-110 group overflow-hidden">
                       <div className="absolute inset-0 rounded-full bg-brand z-0 transition-colors duration-500" />
                       <div className="absolute top-0 right-0 w-1/2 h-full bg-gray-900 rounded-r-full z-[1] group-hover:bg-brand transition-colors duration-500" />
                       <div className="absolute inset-[2px] rounded-full bg-white z-10" />
-                      <img src={["/icons/chat-bubble.png", "/icons/illustration.png", "/icons/window.png", "/icons/worker.png", "/icons/shield.png"][i]} alt="" className="relative z-20 w-10 h-10 object-contain grayscale group-hover:grayscale-0 transition-all duration-500" />
+                      <img
+                        src={
+                          [
+                            "/icons/chat-bubble.png",
+                            "/icons/illustration.png",
+                            "/icons/window.png",
+                            "/icons/worker.png",
+                            "/icons/shield.png",
+                          ][i]
+                        }
+                        alt=""
+                        className="relative z-20 w-10 h-10 object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+                      />
                     </div>
                   </div>
 
@@ -769,17 +865,17 @@ export default function Home() {
                 num: "01",
                 title: "Asesoría",
                 subtitle: "y Visita Técnica",
-                  desc: "Escuchamos tus necesidades, evaluamos tu proyecto y tomamos medidas precisas en obra.",
-                  img: "/img/fases/etapa1.png",
-                  alt: "Asesoría",
+                desc: "Escuchamos tus necesidades, evaluamos tu proyecto y tomamos medidas precisas en obra.",
+                img: "/img/fases/etapa1.png",
+                alt: "Asesoría",
               },
               {
                 num: "02",
                 title: "Diseño",
                 subtitle: "y Cotización",
-                  desc: "Desarrollamos el diseño y te enviamos una propuesta técnica y económica personalizada.",
-                  img: "/img/fases/etapa2.png",
-                  alt: "Diseño",
+                desc: "Creamos un diseño único adaptado a tu espacio y necesidades, con una cotización accesible, transparente y negociable según tu presupuesto.",
+                img: "/img/fases/etapa2.png",
+                alt: "Diseño",
               },
               {
                 num: "03",
@@ -815,13 +911,27 @@ export default function Home() {
                 <div className="flex flex-col items-center shrink-0 pt-4">
                   <div className="relative z-10">
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-gray-900 ring-3 ring-white flex items-center justify-center z-30">
-                      <span className="text-[9px] font-bold text-brand">{step.num}</span>
+                      <span className="text-[9px] font-bold text-brand">
+                        {step.num}
+                      </span>
                     </div>
                     <div className="w-16 h-16 rounded-full relative flex items-center justify-center shadow-sm overflow-hidden">
                       <div className="absolute inset-0 rounded-full bg-brand z-0" />
                       <div className="absolute top-0 right-0 w-1/2 h-full bg-gray-900 rounded-r-full z-[1] transition-colors duration-500" />
                       <div className="absolute inset-[2px] rounded-full bg-white z-10" />
-                      <img src={["/icons/chat-bubble.png", "/icons/illustration.png", "/icons/window.png", "/icons/worker.png", "/icons/shield.png"][i]} alt="" className="relative z-20 w-8 h-8 object-contain grayscale" />
+                      <img
+                        src={
+                          [
+                            "/icons/chat-bubble.png",
+                            "/icons/illustration.png",
+                            "/icons/window.png",
+                            "/icons/worker.png",
+                            "/icons/shield.png",
+                          ][i]
+                        }
+                        alt=""
+                        className="relative z-20 w-8 h-8 object-contain grayscale"
+                      />
                     </div>
                   </div>
                   {i < 4 && (
@@ -1022,6 +1132,25 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Ribbon Separator */}
+      <div className="relative py-3 bg-gray-900 overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(234,179,8,0.15),transparent_70%)]" />
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand/40 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand/40 to-transparent" />
+        <div className="flex items-center justify-center gap-6">
+          <div className="hidden sm:block h-px flex-1 max-w-[200px] bg-gradient-to-r from-transparent to-brand/50" />
+          <div className="flex items-center gap-3">
+            <div className="w-2 h-2 rounded-full bg-brand" />
+            <span className="text-xs sm:text-sm uppercase tracking-[0.3em] text-brand font-bold whitespace-nowrap">
+              Calderon Group S.A.C.
+            </span>
+            <div className="w-2 h-2 rounded-full bg-brand" />
+          </div>
+          <div className="hidden sm:block h-px flex-1 max-w-[200px] bg-gradient-to-l from-transparent to-brand/50" />
+        </div>
+        <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-y-1/2" />
+      </div>
+
       {/* Proveedores Section */}
       <section className="relative py-16 overflow-hidden bg-[#0f0f1a] border-t border-white/5">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 mb-12">
@@ -1048,23 +1177,25 @@ export default function Home() {
               ];
               const items = [...logos, ...logos];
               return items.map((src, i) => {
-                  const isLogo4 = src.includes("logo4");
-                  return (
+                const isLogo4 = src.includes("logo4");
+                return (
+                  <div
+                    key={i}
+                    className="shrink-0 mx-8 sm:mx-16 lg:mx-24 flex items-center justify-center"
+                  >
                     <div
-                      key={i}
-                      className="shrink-0 mx-8 sm:mx-16 lg:mx-24 flex items-center justify-center"
+                      className={`${isLogo4 ? "w-36 h-36 sm:w-52 sm:h-52" : "w-28 h-28 sm:w-36 sm:h-36"} flex items-center justify-center`}
                     >
-                      <div className={`${isLogo4 ? "w-36 h-36 sm:w-52 sm:h-52" : "w-28 h-28 sm:w-36 sm:h-36"} flex items-center justify-center`}>
-                        <Image
-                          src={src}
-                          alt="Proveedor"
-                          width={isLogo4 ? 120 : 80}
-                          height={isLogo4 ? 120 : 80}
-                          className="w-full h-full object-contain"
-                        />
-                      </div>
+                      <Image
+                        src={src}
+                        alt="Proveedor"
+                        width={isLogo4 ? 120 : 80}
+                        height={isLogo4 ? 120 : 80}
+                        className="w-full h-full object-contain"
+                      />
                     </div>
-                  );
+                  </div>
+                );
               });
             })()}
           </div>
