@@ -503,6 +503,40 @@ export default function Home() {
               </p>
             </div>
           </div>
+
+          {/* Valores */}
+          <div className="mt-12 group relative bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand via-brand/80 to-brand/40" />
+            <div className="text-center mb-6">
+              <h3 className="text-xl font-bold text-gray-900">Valores</h3>
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-3 mb-6">
+              {[
+                "Calidad",
+                "Integridad",
+                "Compromiso",
+                "Innovación",
+                "Responsabilidad",
+                "Puntualidad",
+                "Trabajo en Equipo",
+              ].map((valor) => (
+                <span
+                  key={valor}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand/5 border border-brand/10 text-sm font-medium text-gray-700 hover:bg-brand/10 hover:border-brand/20 transition-colors duration-200"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-brand" />
+                  {valor}
+                </span>
+              ))}
+            </div>
+
+            <p className="text-gray-500 leading-relaxed text-center">
+              Son los valores que nos guían para brindar soluciones
+              confiables, seguras y duraderas, superando las expectativas de
+              nuestros clientes en cada proyecto.
+            </p>
+          </div>
         </div>
       </section>
 
