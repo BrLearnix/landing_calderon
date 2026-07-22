@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { calidades } from "./vidrio/data";
 
 const servicios = [
   {
@@ -106,6 +107,76 @@ export default function ServiciosPage() {
               </div>
             </Link>
           ))}
+        </div>
+      </div>
+
+      {/* Cinta divisoria centrada en la transición de fondo */}
+      <div className="relative z-10 -mt-6">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+          <div className="flex items-center gap-4">
+            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-brand/40 to-transparent" />
+            <div className="w-2 h-2 rotate-45 bg-brand/60" />
+            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-brand/40 to-transparent" />
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-[#0f172a]">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-16 sm:py-20">
+          <div className="text-center mb-16">
+            <span className="inline-block text-xs uppercase tracking-[0.25em] text-brand font-semibold mb-4">
+              Calidades de Vidrio
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-6">
+              Calidades de <span className="text-yellow-400">Vidrio</span>
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Selecciona el nivel de seguridad y aislamiento que tu proyecto
+              requiere. Contamos con diversas opciones y colores.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {calidades.map((c) => (
+              <Link
+                key={c.slug}
+                href={`/servicios/vidrio/${c.slug}`}
+                className="group relative bg-white/[0.04] border border-white/[0.08] rounded-2xl hover:bg-white/[0.07] hover:border-white/[0.12] hover:-translate-y-1.5 hover:shadow-xl hover:shadow-black/20 transition-all duration-300 flex flex-col min-h-[280px]"
+              >
+                <div className="absolute -top-2 -right-2 w-20 h-20 rounded-full overflow-hidden border-2 border-white/[0.1] group-hover:w-48 group-hover:h-48 group-hover:border-brand/40 transition-all duration-300 z-10 shadow-lg shadow-black/40">
+                  <Image
+                    src={c.img}
+                    alt={c.title}
+                    fill
+                    className="object-cover"
+                    sizes="192px"
+                    quality={100}
+                  />
+                </div>
+                <div className="p-6 flex flex-col justify-between flex-1">
+                  <div className="">
+                    <h3 className="text-lg font-bold text-white mb-3 group-hover:text-brand transition-colors duration-300">
+                      {c.title}
+                    </h3>
+                    <p className="text-gray-400 text-sm leading-relaxed">
+                      {c.description}
+                    </p>
+                  </div>
+                  <div className="mt-6">
+                    <span
+                      className={`inline-block px-3 py-1 text-xs font-medium rounded-full transition-colors duration-300 ${
+                        c.featured
+                          ? "bg-brand/10 border border-brand/20 text-brand"
+                          : "bg-white/[0.06] border border-white/[0.08] text-gray-400 group-hover:text-brand group-hover:border-brand/20 group-hover:bg-brand/10"
+                      }`}
+                    >
+                      {c.badge}
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </div>

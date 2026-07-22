@@ -33,7 +33,7 @@ const categoryData: Record<
   { title: string; description: string; image: string }
 > = {
   aluminio: {
-    title: "Aluminio",
+    title: "Sistemas en Aluminio de Alta Gama",
     description:
       "Ventanas, puertas, mamparas y fachadas de aluminio con rotura de puente térmico.",
     image: "/img/projects/project1.jpg",
@@ -139,7 +139,16 @@ export default function CategoriaContent({
             Proyectos
           </span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-4">
-            {info.title}
+            {info.title.split("Aluminio de Alta Gama").map((part, i) =>
+              i === 0 ? (
+                <span key={i}>
+                  {part}
+                  <span className="text-yellow-400">Aluminio de Alta Gama</span>
+                </span>
+              ) : (
+                part
+              )
+            )}
           </h1>
           <p className="text-gray-400 max-w-xl mx-auto">{info.description}</p>
         </div>

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const projectCategories = [
   {
-    title: "Aluminio",
+    title: "Sistemas en Aluminio de Alta Gama",
     slug: "aluminio",
     image: "/img/projects/project1.jpg",
     description: "Ventanas, puertas, mamparas y fachadas de aluminio con rotura de puente térmico.",

@@ -32,7 +32,7 @@ export default function AluminioPage() {
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight mb-6 leading-[1.1]">
               <span className="text-brand">
-                Sistemas en Aluminio de Alta Gama
+                Sistemas en <span className="text-yellow-400">Aluminio de Alta Gama</span>
               </span>
             </h1>
             <p className="text-gray-400 leading-relaxed mb-8">
