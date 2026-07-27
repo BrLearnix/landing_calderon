@@ -24,9 +24,13 @@ const iconPaths: Record<number, string> = {
 function CalidadCard({
   calidad,
   index,
+  hoveredIndex,
+  setHoveredIndex,
 }: {
   calidad: Calidad;
   index: number;
+  hoveredIndex: number | null;
+  setHoveredIndex: (i: number | null) => void;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -47,14 +51,22 @@ function CalidadCard({
     return () => observer.disconnect();
   }, []);
 
+  const isHovered = hoveredIndex === index;
+  const anotherHovered = hoveredIndex !== null && hoveredIndex !== index;
+
   return (
     <div
       ref={ref}
       className="group flex flex-col"
+      onMouseEnter={() => setHoveredIndex(index)}
+      onMouseLeave={() => setHoveredIndex(null)}
       style={{
-        opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(32px)",
-        transition: `opacity 0.7s cubic-bezier(0.16,1,0.3,1) ${index * 100}ms, transform 0.7s cubic-bezier(0.16,1,0.3,1) ${index * 100}ms`,
+        opacity: visible ? (anotherHovered ? 0.4 : 1) : 0,
+        transform: visible
+          ? `translateY(0) scale(${isHovered ? 1.03 : 1})`
+          : "translateY(32px)",
+        transition: `opacity 0.4s ease, transform 0.4s ease, ${visible ? `opacity 0.7s cubic-bezier(0.16,1,0.3,1) ${index * 100}ms, transform 0.7s cubic-bezier(0.16,1,0.3,1) ${index * 100}ms` : ""}`,
+        zIndex: isHovered ? 10 : 1,
       }}
     >
       {/* Image */}
@@ -83,7 +95,7 @@ function CalidadCard({
       </div>
 
       {/* Content */}
-      <div className="flex flex-col flex-1 bg-white/60">
+      <div className="flex flex-col flex-1 bg-[#ebebeb] p-[15px]">
         {/* Title with curved top */}
         <div className="relative">
           <svg
@@ -97,7 +109,7 @@ function CalidadCard({
               fill="#1a1a2e"
             />
           </svg>
-          <div className="bg-[#1a1a2e] px-5 py-4 relative overflow-hidden">
+          <div className="bg-[#1a1a2e] px-5 py-4 relative overflow-hidden -mx-[15px]">
             <h3 className="text-lg sm:text-xl font-bold tracking-tight leading-tight">
               <span className="text-white block">Vidrio</span>
               <span className="text-brand block">
@@ -157,7 +169,7 @@ function CalidadCard({
         {/* CTA */}
         <Link
           href={`/servicios/vidrio/${calidad.slug}`}
-          className="inline-flex items-center gap-2 mt-6 text-sm font-medium text-gray-900 group-hover:text-brand transition-colors duration-300"
+          className="flex items-center justify-center gap-2 mt-6 py-3 bg-brand text-white text-sm font-semibold rounded-sm hover:bg-brand-dark transition-colors duration-300"
         >
           <span>Ver detalle</span>
           <svg
@@ -186,6 +198,7 @@ export default function CalidadVidrioSection({
 }) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [sectionVisible, setSectionVisible] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -237,7 +250,7 @@ export default function CalidadVidrioSection({
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-14">
           {calidades.map((c, i) => (
-            <CalidadCard key={c.slug} calidad={c} index={i} />
+            <CalidadCard key={c.slug} calidad={c} index={i} hoveredIndex={hoveredIndex} setHoveredIndex={setHoveredIndex} />
           ))}
         </div>
       </div>
