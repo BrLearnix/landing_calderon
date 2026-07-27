@@ -2,7 +2,7 @@ export const calidades = [
   {
     title: "Vidrio Crudo",
     slug: "vidrio-crudo",
-    img: "/img/vidrios/grudo.png",
+    img: "/img/vidrios/crudo.jpg",
     description:
       "Vidrio en su estado básico, sin tratar. Es frágil y, al romperse, se quiebra en fragmentos puntiagudos. Se emplea principalmente en ventanas interiores y de menor exigencia.",
     badge: "Uso en interiores estándar",
