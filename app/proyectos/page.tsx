@@ -6,28 +6,24 @@ const projectCategories = [
     slug: "aluminio",
     image: "/img/projects/project1.jpg",
     description: "Ventanas, puertas, mamparas y fachadas de aluminio con rotura de puente térmico.",
-    count: 5,
   },
   {
     title: "PVC Termoacústico",
     slug: "pvc-termoacustico",
     image: "/img/projects/project6.jpg",
     description: "Ventanas y puertas en PVC con aislamiento térmico y acústico premium.",
-    count: 5,
   },
   {
     title: "Acero Inoxidable",
     slug: "acero-inoxidable",
     image: "/img/projects/project11.jpg",
     description: "Barandas, pasamanos, cocinas y escaleras en acero inoxidable.",
-    count: 5,
   },
   {
     title: "Puerta de Ducha",
     slug: "puerta-de-ducha",
     image: "/img/projects/project16.jpg",
     description: "Puertas de ducha con perfiles de aluminio y vidrio templado.",
-    count: 6,
   },
 ];
 
@@ -81,11 +77,7 @@ export default function ProyectosPage() {
                     </svg>
                   </div>
                 </div>
-                <div className="mt-3">
-                  <span className="inline-block px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-white bg-brand/60 rounded-full">
-                    {cat.count} proyectos
-                  </span>
-                </div>
+
               </div>
             </a>
           ))}
