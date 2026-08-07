@@ -13,90 +13,45 @@ interface Sistema {
 }
 
 const colorPalette: Record<string, { nombre: string; hex: string }> = {
-  negro: { nombre: "Negro", hex: "#1b1d22" },
   blanco: { nombre: "Blanco", hex: "#f7f7f7" },
-  "roble dorado": { nombre: "Roble dorado", hex: "#c98a44" },
-  gris: { nombre: "Gris", hex: "#9aa2ad" },
+  negro: { nombre: "Negro", hex: "#1b1d22" },
   antracita: { nombre: "Antracita", hex: "#3c4147" },
-  natural: { nombre: "Natural", hex: "#c4cad2" },
-  madera: { nombre: "Madera", hex: "#8b5a2b" },
-  grafito: { nombre: "Grafito", hex: "#30363c" },
+  "gris aluminio": { nombre: "Gris aluminio", hex: "#a9adb2" },
+  "gris mate": { nombre: "Gris mate", hex: "#6e747b" },
+  "roble dorado": { nombre: "Roble dorado", hex: "#c98a44" },
 };
 
 const servicios = (n: string[]) =>
-  n.map((s) => `/img/services/aluminio/${s}`);
+  n.map((s) => `/img/services/pvc/${s}`);
 const proyectos = (n: string[]) => n.map((s) => `/img/projects/${s}`);
 
 const sistemas: Sistema[] = [
   {
-    producto: "Estructura Clásica",
-    apertura: "Puerta, ventana y mampara",
-    vidrio: "Crudo colores. Laminado de 6 y 8 mm",
-    colores: ["negro", "natural", "madera"],
+    producto: "Mampara",
+    apertura: "Corrediza, batiente y oscilobatiente",
+    vidrio: "Laminado de 6 y 8 mm + insulado",
+    colores: ["blanco", "negro", "antracita", "gris aluminio", "gris mate", "roble dorado"],
     images: servicios(["img1.jpg", "img2.jpg"]).concat(
-      proyectos(["project2.jpg", "project3.jpg"]),
-    ),
-  },
-  {
-    producto: "Serie 20",
-    apertura: "Ventana corrediza",
-    vidrio: "Crudo colores. Laminado de 6 mm",
-    colores: ["natural", "negro", "blanco"],
-    images: servicios(["img2.jpg", "img3.jpg"]).concat(
-      proyectos(["project4.jpg", "project5.jpg"]),
-    ),
-  },
-  {
-    producto: "Serie 25",
-    apertura: "Ventana y mampara corrediza",
-    vidrio: "Crudo colores, templado y laminado de 6 y 8 mm",
-    colores: ["natural", "negro", "blanco", "madera"],
-    images: servicios(["img3.jpg", "img4.jpg"]).concat(
       proyectos(["project6.jpg", "project7.jpg"]),
     ),
   },
   {
-    producto: "Serie 42",
-    apertura: "Ventana proyectante",
-    vidrio: "Crudo colores. Laminado de 6 mm",
-    colores: ["natural", "negro", "blanco"],
-    images: servicios(["img4.jpg", "img5.jpg"]).concat(
+    producto: "Puerta",
+    apertura: "Batiente",
+    vidrio: "Laminado de 6 y 8 mm + insulado",
+    colores: ["blanco", "negro", "antracita", "gris aluminio", "gris mate", "roble dorado"],
+    images: servicios(["img3.jpg", "img4.jpg"]).concat(
       proyectos(["project8.jpg", "project9.png"]),
     ),
   },
   {
-    producto: "Serie 62",
-    apertura: "Ventana y mampara corredizas",
-    vidrio: "Crudo colores. Laminado de 6 y 8 mm",
-    colores: ["natural", "negro", "blanco"],
-    images: servicios(["img5.jpg", "img6.png"]).concat(
-      proyectos(["project10.jpg", "project11.jpg"]),
+    producto: "Ventana",
+    apertura: "Corrediza, batiente y oscilobatiente",
+    vidrio: "Laminado de 6 y 8 mm + insulado",
+    colores: ["blanco", "negro", "antracita", "gris aluminio", "gris mate", "roble dorado"],
+    images: servicios(["img5.jpg", "img6.jpeg", "modelo.png"]).concat(
+      proyectos(["project10.jpg"]),
     ),
-  },
-  {
-    producto: "Serie 80",
-    apertura: "Mampara",
-    vidrio: "Crudo colores, laminado de 6 y 8 mm e insulado",
-    colores: ["natural", "negro", "blanco", "madera", "grafito"],
-    images: servicios(["img6.png", "modelo.avif"]).concat(
-      proyectos(["project12.jpg", "project13.jpg"]),
-    ),
-  },
-  {
-    producto: "Serie 35",
-    apertura: "Puerta y mampara",
-    vidrio: "Crudo colores. Laminado de 6 mm",
-    colores: ["natural", "negro", "blanco"],
-    images: servicios(["modelo.avif", "img1.jpg"]).concat(
-      proyectos(["project14.jpg", "project15.jpg"]),
-    ),
-  },
-  {
-    producto: "Serie 71",
-    apertura: "Puertas y mampara",
-    vidrio: "Crudo colores. Laminado de 6 mm",
-    colores: ["natural", "negro", "blanco"],
-    images: proyectos(["project1.jpg", "project16.jpg", "project17.jpg", "project18.jpg"]),
   },
 ];
 
@@ -104,38 +59,50 @@ const allColors = [...new Set(sistemas.flatMap((i) => i.colores))];
 
 const caracteristicas = [
   {
-    titulo: "Alta resistencia",
-    descripcion: "Perfiles estructurales robustos para máxima durabilidad.",
+    titulo: "Aislamiento acústico",
+    descripcion: "Reduce el ruido exterior para un confort interior real.",
     icono: (
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={2}
-        d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"
+        d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm-12 3V9.5"
       />
     ),
   },
   {
-    titulo: "Acabados premium",
-    descripcion: "Colores y texturas que se adaptan a cada proyecto.",
+    titulo: "Aislamiento térmico",
+    descripcion: "Rotura de puente térmico que optimiza la energía.",
     icono: (
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={2}
-        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+        d="M13.477 8.89c.428-.832.827-1.674 1.168-2.54a3.207 3.207 0 01-4.652 1.12A3.227 3.227 0 017.5 12a7.5 7.5 0 1013.894-3.47c-.778 1.147-1.864 2.067-3.012 2.537A9.75 9.75 0 0113.477 8.89z"
       />
     ),
   },
   {
     titulo: "Seguridad",
-    descripcion: "Cierres y herrajes de alta confiabilidad y firmeza.",
+    descripcion: "Perfiles reforzados y cierres multipunto confiables.",
     icono: (
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={2}
         d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"
+      />
+    ),
+  },
+  {
+    titulo: "Alta durabilidad",
+    descripcion: "Resistente a la intemperie con acabados de larga vida.",
+    icono: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"
       />
     ),
   },
@@ -146,17 +113,17 @@ function Swatch({ color }: { color: string }) {
   return (
     <span className="group/swatch relative inline-flex" title={c.nombre}>
       <span
-        className="block w-6 h-6 rounded-full border border-gray-300 shadow-[inset_0_1px_3px_rgba(0,0,0,0.3)] transition-transform duration-200 group-hover/swatch:scale-110 cursor-pointer"
+        className="block w-6 h-6 rounded-full border border-white/25 shadow-[inset_0_1px_3px_rgba(0,0,0,0.3)] transition-transform duration-200 group-hover/swatch:scale-110 cursor-pointer"
         style={{ backgroundColor: c.hex }}
       />
-      <span className="pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 mb-2 whitespace-nowrap rounded-md bg-white px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-gray-900 opacity-0 translate-y-1 transition-all duration-200 group-hover/swatch:opacity-100 group-hover/swatch:translate-y-0 shadow-lg border border-gray-200">
+      <span className="pointer-events-none absolute bottom-full left-1/2 z-20 -translate-x-1/2 mb-2 whitespace-nowrap rounded-md bg-white px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-gray-900 opacity-0 translate-y-1 transition-all duration-200 group-hover/swatch:opacity-100 group-hover/swatch:translate-y-0 shadow-lg">
         {c.nombre}
       </span>
     </span>
   );
 }
 
-export default function VariedadesAluminio() {
+export default function VariedadesPVC() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   const [openSerie, setOpenSerie] = useState<Sistema | null>(null);
@@ -212,7 +179,7 @@ export default function VariedadesAluminio() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/img/services/aluminio/img1.jpg"
+            src="/img/services/pvc/img1.jpg"
             alt=""
             fill
             className="object-cover"
@@ -244,8 +211,8 @@ export default function VariedadesAluminio() {
 
               <div className="relative aspect-[4/3] rounded-[1.75rem] overflow-hidden border border-white/10 shadow-2xl shadow-black/50">
                 <Image
-                  src="/img/services/aluminio/img2.jpg"
-                  alt="Sistema en Aluminio de Alta Gama"
+                  src="/img/services/pvc/img2.jpg"
+                  alt="Sistema de PVC Termoacústico"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -272,10 +239,10 @@ export default function VariedadesAluminio() {
                 </span>
                 <div>
                   <p className="text-sm font-semibold text-white">
-                    Aluminio de Alta Gama
+                    Termoacústico Antiruido
                   </p>
                   <p className="text-[11px] text-gray-400">
-                    Perfiles con rotura de puente térmico
+                    Vidrio laminado + insulado
                   </p>
                 </div>
               </div>
@@ -293,22 +260,22 @@ export default function VariedadesAluminio() {
             >
               <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-brand font-semibold mb-5">
                 <span className="h-px w-8 bg-brand/70" />
-                Servicio · Sistemas de Aluminio
+                Servicio · PVC Antiruido
               </span>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6 leading-[1.05]">
-                Sistemas en{" "}
+                Sistema de{" "}
                 <span className="relative text-brand">
-                  Aluminio de Alta Gama
+                  PVC Termoacústico
                   <span className="absolute -bottom-2 left-0 right-0 h-px bg-gradient-to-r from-brand/80 to-transparent" />
                 </span>
               </h1>
 
               <p className="text-gray-300 text-lg leading-relaxed mb-9 max-w-xl">
-                Ventanas, puertas, mamparas y fachadas de aluminio a medida con
-                rotura de puente térmico y acabados personalizados. Diseño
-                premium, resistencia y eficiencia para proyectos residenciales,
-                comerciales e industriales.
+                Nuestros sistemas de PVC ofrecen un aislamiento acústico y
+                térmico excepcional, optimizando el confort interior, la
+                eficiencia energética y la seguridad de tu hogar o proyecto,
+                con acabados que aportan elegancia y valor.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-5 mb-10">
@@ -395,7 +362,7 @@ export default function VariedadesAluminio() {
           >
             <span className="inline-flex items-center gap-3 text-xs uppercase tracking-[0.25em] text-brand-dark font-semibold mb-4">
               <span className="h-px w-8 bg-brand/70" />
-              Variedades y sistemas
+              Sistemas y variedades
               <span className="h-px w-8 bg-brand/70" />
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 tracking-tight mb-5">
@@ -403,9 +370,9 @@ export default function VariedadesAluminio() {
               <span className="text-brand-dark">cada espacio</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Sistemas de aluminio de alta gama. Cada serie incluye su tipo de
-              apertura, presentación de vidrio y la paleta de colores
-              disponibles. Haz clic en una tarjeta para ver más fotos.
+              Mamparas, puertas y ventanas en PVC termoacústico. Cada variedad
+              incluye su tipo de apertura, presentación de vidrio y la paleta de
+              colores disponibles. Haz clic en una tarjeta para ver más fotos.
             </p>
           </div>
 
