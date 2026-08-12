@@ -4,25 +4,25 @@ const projectCategories = [
   {
     title: "Sistemas en Aluminio de Alta Gama",
     slug: "aluminio",
-    image: "/img/projects/project1.jpg",
+    image: "/img/projects/aluminio/proyecto-ancon.jpg",
     description: "Ventanas, puertas, mamparas y fachadas de aluminio con rotura de puente térmico.",
   },
   {
     title: "PVC Termoacústico",
     slug: "pvc-termoacustico",
-    image: "/img/projects/project6.jpg",
+    image: "/img/projects/pvc/obra-pvc.jpg",
     description: "Ventanas y puertas en PVC con aislamiento térmico y acústico premium.",
   },
   {
     title: "Acero Inoxidable",
     slug: "acero-inoxidable",
-    image: "/img/projects/project11.jpg",
+    image: "/img/projects/acero/obra-balcon-vidrio-templado.jpg",
     description: "Barandas, pasamanos, cocinas y escaleras en acero inoxidable.",
   },
   {
     title: "Puerta de Ducha",
     slug: "puerta-de-ducha",
-    image: "/img/projects/project16.jpg",
+    image: "/img/projects/ducha/ducha-moderno.jpg",
     description: "Puertas de ducha con perfiles de aluminio y vidrio templado.",
   },
 ];
