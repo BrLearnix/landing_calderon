@@ -179,7 +179,7 @@ export default function VariedadesPVC() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/img/services/pvc/img1.jpg"
+            src={"/img/services/pvc/img1.jpg"}
             alt=""
             fill
             className="object-cover"
@@ -211,7 +211,7 @@ export default function VariedadesPVC() {
 
               <div className="relative aspect-[4/3] rounded-[1.75rem] overflow-hidden border border-white/10 shadow-2xl shadow-black/50">
                 <Image
-                  src="/img/services/pvc/img2.jpg"
+                  src={"/img/services/pvc/img2.jpg"}
                   alt="Sistema de PVC Termoacústico"
                   fill
                   className="object-cover"

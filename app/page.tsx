@@ -254,7 +254,7 @@ export default function Home() {
               <div className="relative w-full max-w-sm mt-24">
                 <div className="absolute -inset-3 bg-gradient-to-br from-brand/20 to-transparent rounded-3xl blur-2xl opacity-60" />
                 <Image
-                  src="/img/modelo4.png"
+                  src={"/img/modelo4.png"}
                   alt="Calderon Group S.A.C"
                   width={280}
                   height={350}
@@ -404,7 +404,7 @@ export default function Home() {
         className="py-20 sm:py-28 relative overflow-hidden"
       >
         <img
-          src="/img/backgrounds/background1.jpg"
+          src={"/img/backgrounds/background1.jpg"}
           alt=""
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -491,7 +491,7 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-tr from-brand/30 via-transparent to-brand/10 z-10 mix-blend-overlay" />
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 z-10" />
                     <Image
-                      src="/img/about/modelo4.jpg"
+                      src={"/img/about/modelo4.jpg"}
                       alt="Calderon Group S.A.C"
                       width={500}
                       height={500}
@@ -737,7 +737,7 @@ export default function Home() {
                   {/* Imagen */}
                   <div className="w-full aspect-square rounded-2xl bg-gray-100 border border-gray-200 overflow-hidden group/img mt-auto">
                     <img
-                      src={step.img || undefined}
+                      src={step.img ? step.img : undefined}
                       alt={step.alt}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
                     />
@@ -848,7 +848,7 @@ export default function Home() {
 
                   <div className="w-full aspect-square rounded-xl bg-gray-100 border border-gray-200 overflow-hidden group/img mt-auto">
                     <img
-                      src={step.img || undefined}
+                      src={step.img ? step.img : undefined}
                       alt={step.alt}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
                     />
@@ -954,7 +954,7 @@ export default function Home() {
                   </p>
                   <div className="w-full rounded-2xl bg-gray-100 border border-gray-200 overflow-hidden group/img h-[200px]">
                     <img
-                      src={step.img || undefined}
+                      src={step.img ? step.img : undefined}
                       alt={step.alt}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
                     />
