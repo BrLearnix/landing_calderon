@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import Watermark from "./Watermark";
 
 interface ImageGalleryProps {
   mainImage: string;
@@ -44,7 +45,7 @@ export default function ImageGallery({
     <>
       <div className="space-y-4">
         <div
-          className="aspect-[4/3] rounded-2xl overflow-hidden bg-white/5 border border-white/10 shadow-sm cursor-pointer group"
+          className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-white/5 border border-white/10 shadow-sm cursor-pointer group"
           onClick={() => setSelected(mainImage)}
         >
           <Image
@@ -54,13 +55,14 @@ export default function ImageGallery({
             height={450}
             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
           />
+          <Watermark size={96} opacity={0.4} />
         </div>
 
         <div className="grid grid-cols-3 gap-4">
           {allThumbs.map((src, i) => (
             <div
               key={i}
-              className="aspect-square rounded-xl overflow-hidden bg-white/5 border border-white/10 shadow-sm cursor-pointer group"
+              className="relative aspect-square rounded-xl overflow-hidden bg-white/5 border border-white/10 shadow-sm cursor-pointer group"
               onClick={() => setSelected(src)}
             >
               <Image
@@ -70,6 +72,7 @@ export default function ImageGallery({
                 height={200}
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               />
+              <Watermark size={48} opacity={0.35} />
             </div>
           ))}
         </div>
@@ -139,6 +142,7 @@ export default function ImageGallery({
               className="object-contain"
               sizes="(max-width: 1024px) 100vw, 80vw"
             />
+            <Watermark size={220} opacity={0.45} />
           </div>
 
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/60 text-xs">

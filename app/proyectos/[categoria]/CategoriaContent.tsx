@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Watermark from "@/app/components/Watermark";
 
 interface Project {
   src: string;
@@ -331,6 +332,7 @@ export default function CategoriaContent({
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
+              <Watermark size={48} opacity={0.35} />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent transition-opacity duration-500" />
 
               {/* Bottom content */}
@@ -465,6 +467,7 @@ export default function CategoriaContent({
                 sizes="(max-width: 1024px) 100vw, 80vw"
                 quality={100}
               />
+              <Watermark size={200} opacity={0.45} />
             </div>
 
             {/* Next */}
