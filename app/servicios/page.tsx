@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { calidades } from "./vidrio/data";
 import CalidadVidrioSection from "./CalidadVidrioSection";
-import Watermark from "@/app/components/Watermark";
 
 const servicios = [
   {
@@ -170,7 +169,6 @@ export default function ServiciosPage() {
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#10101f] via-black/10 to-transparent" />
-                    <Watermark size={64} opacity={0.4} />
                   </div>
 
                   <div className="flex flex-col flex-1 p-6 sm:p-7">

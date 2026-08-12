@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import Watermark from "@/app/components/Watermark";
 
 const backgrounds = [
   "/img/backgrounds/background1.jpg",
@@ -359,7 +358,6 @@ export default function Home() {
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <Watermark size={56} opacity={0.35} />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                 <div className="absolute inset-0 bg-brand/0 group-hover:bg-brand/10 transition-colors duration-300" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
@@ -499,7 +497,6 @@ export default function Home() {
                       height={500}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[20%] contrast-110 brightness-95"
                     />
-                    <Watermark size={120} opacity={0.4} className="z-10" />
                   </div>
                 </div>
               </div>
