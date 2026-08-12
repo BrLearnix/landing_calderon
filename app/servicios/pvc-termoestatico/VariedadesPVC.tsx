@@ -21,9 +21,12 @@ const colorPalette: Record<string, { nombre: string; hex: string }> = {
   "roble dorado": { nombre: "Roble dorado", hex: "#c98a44" },
 };
 
-const servicios = (n: string[]) =>
-  n.map((s) => `/img/services/pvc/${s}`);
-const proyectos = (n: string[]) => n.map((s) => `/img/projects/${s}`);
+const mampara = (n: string[]) =>
+  n.map((s) => `/img/services/pvc/mampara/${s}`);
+const puerta = (n: string[]) =>
+  n.map((s) => `/img/services/pvc/puerta/${s}`);
+const ventana = (n: string[]) =>
+  n.map((s) => `/img/services/pvc/ventana/${s}`);
 
 const sistemas: Sistema[] = [
   {
@@ -31,27 +34,21 @@ const sistemas: Sistema[] = [
     apertura: "Corrediza, batiente y oscilobatiente",
     vidrio: "Laminado de 6 y 8 mm + insulado",
     colores: ["blanco", "negro", "antracita", "gris aluminio", "gris mate", "roble dorado"],
-    images: servicios(["img1.jpg", "img2.jpg"]).concat(
-      proyectos(["project6.jpg", "project7.jpg"]),
-    ),
+    images: mampara(["img1.png", "img4.png", "img6.jpeg"]),
   },
   {
     producto: "Puerta",
     apertura: "Batiente",
     vidrio: "Laminado de 6 y 8 mm + insulado",
     colores: ["blanco", "negro", "antracita", "gris aluminio", "gris mate", "roble dorado"],
-    images: servicios(["img3.jpg", "img4.jpg"]).concat(
-      proyectos(["project8.jpg", "project9.png"]),
-    ),
+    images: puerta(["img2.jpg", "img3.jpg", "img4.jpg", "img5.jpg", "img6.png", "img7.png"]),
   },
   {
     producto: "Ventana",
     apertura: "Corrediza, batiente y oscilobatiente",
     vidrio: "Laminado de 6 y 8 mm + insulado",
     colores: ["blanco", "negro", "antracita", "gris aluminio", "gris mate", "roble dorado"],
-    images: servicios(["img5.jpg", "img6.jpeg", "modelo.png"]).concat(
-      proyectos(["project10.jpg"]),
-    ),
+    images: ventana(["img1.jpg", "img2.png", "img3.png", "img4.png", "img5.png"]),
   },
 ];
 
@@ -179,7 +176,7 @@ export default function VariedadesPVC() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src={"/img/services/pvc/img1.jpg"}
+            src={"/img/services/pvc/mampara/img1.png"}
             alt=""
             fill
             className="object-cover"
@@ -211,7 +208,7 @@ export default function VariedadesPVC() {
 
               <div className="relative aspect-[4/3] rounded-[1.75rem] overflow-hidden border border-white/10 shadow-2xl shadow-black/50">
                 <Image
-                  src={"/img/services/pvc/img2.jpg"}
+                  src={"/img/services/pvc/mampara/img4.png"}
                   alt="Sistema de PVC Termoacústico"
                   fill
                   className="object-cover"

@@ -1,10 +1,23 @@
 import Link from "next/link";
+import Image from "next/image";
 import ImageGallery from "@/app/components/ImageGallery";
 
 export default function DuchaPage() {
   return (
-    <div className="min-h-screen pt-20 bg-[#1a1a2e]">
-      <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12 py-16 sm:py-20">
+    <div className="relative min-h-screen pt-20">
+      <div className="absolute inset-0">
+        <Image
+          src="/img/services/puerta/img1.jpg"
+          alt=""
+          fill
+          className="object-cover"
+          sizes="100vw"
+          priority
+        />
+        <div className="absolute inset-0 bg-[#1a1a2e]/85" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a2e] via-transparent to-transparent" />
+      </div>
+      <div className="relative max-w-6xl mx-auto px-5 sm:px-8 lg:px-12 py-16 sm:py-20">
         <Link
           href="/"
           className="inline-flex items-center gap-2 text-gray-500 hover:text-brand font-medium mb-10 transition-colors text-sm group"
