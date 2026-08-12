@@ -549,7 +549,7 @@ export default function VariedadesPVC() {
             onClick={() => setOpenSerie(null)}
           >
             <div
-              className="relative w-full max-w-4xl max-h-full"
+              className="relative w-full max-w-4xl h-[70vh]"
               onClick={(e) => e.stopPropagation()}
             >
               <Image

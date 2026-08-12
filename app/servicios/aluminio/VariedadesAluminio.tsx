@@ -25,7 +25,6 @@ const colorPalette: Record<string, { nombre: string; hex: string }> = {
 
 const servicios = (n: string[]) =>
   n.map((s) => `/img/services/aluminio/${s}`);
-const proyectos = (n: string[]) => n.map((s) => `/img/projects/${s}`);
 
 const sistemas: Sistema[] = [
   {
@@ -33,70 +32,67 @@ const sistemas: Sistema[] = [
     apertura: "Puerta, ventana y mampara",
     vidrio: "Crudo colores. Laminado de 6 y 8 mm",
     colores: ["negro", "natural", "madera"],
-    images: servicios(["img1.jpg", "img2.jpg"]).concat(
-      proyectos(["project2.jpg", "project3.jpg"]),
-    ),
+    images: servicios([
+      "e-clasica.png",
+      "e-clasica(1).png",
+      "e-clasica(2).png",
+      "e-clasica(3).png",
+      "e-clasica(4).png",
+    ]),
   },
   {
     producto: "Serie 20",
     apertura: "Ventana corrediza",
     vidrio: "Crudo colores. Laminado de 6 mm",
     colores: ["natural", "negro", "blanco"],
-    images: servicios(["img2.jpg", "img3.jpg"]).concat(
-      proyectos(["project4.jpg", "project5.jpg"]),
-    ),
+    images: servicios(["serie-20.jpg", "img1.jpg"]),
   },
   {
     producto: "Serie 25",
     apertura: "Ventana y mampara corrediza",
     vidrio: "Crudo colores, templado y laminado de 6 y 8 mm",
     colores: ["natural", "negro", "blanco", "madera"],
-    images: servicios(["img3.jpg", "img4.jpg"]).concat(
-      proyectos(["project6.jpg", "project7.jpg"]),
-    ),
+    images: servicios([
+      "serie-25.jpg",
+      "serie-25.png",
+      "serie-25(1).png",
+      "serie-25(2).jpg",
+    ]),
   },
   {
     producto: "Serie 42",
     apertura: "Ventana proyectante",
     vidrio: "Crudo colores. Laminado de 6 mm",
     colores: ["natural", "negro", "blanco"],
-    images: servicios(["img4.jpg", "img5.jpg"]).concat(
-      proyectos(["project8.jpg", "project9.png"]),
-    ),
+    images: servicios(["serie-42.png", "img2.jpg"]),
   },
   {
     producto: "Serie 62",
     apertura: "Ventana y mampara corredizas",
     vidrio: "Crudo colores. Laminado de 6 y 8 mm",
     colores: ["natural", "negro", "blanco"],
-    images: servicios(["img5.jpg", "img6.png"]).concat(
-      proyectos(["project10.jpg", "project11.jpg"]),
-    ),
+    images: servicios(["serie-62.png", "serie-60.png", "img3.jpg"]),
   },
   {
     producto: "Serie 80",
     apertura: "Mampara",
     vidrio: "Crudo colores, laminado de 6 y 8 mm e insulado",
     colores: ["natural", "negro", "blanco", "madera", "grafito"],
-    images: servicios(["img6.png", "modelo.avif"]).concat(
-      proyectos(["project12.jpg", "project13.jpg"]),
-    ),
+    images: servicios(["serie-80.png", "img4.jpg"]),
   },
   {
     producto: "Serie 35",
     apertura: "Puerta y mampara",
     vidrio: "Crudo colores. Laminado de 6 mm",
     colores: ["natural", "negro", "blanco"],
-    images: servicios(["modelo.avif", "img1.jpg"]).concat(
-      proyectos(["project14.jpg", "project15.jpg"]),
-    ),
+    images: servicios(["img5.jpg"]),
   },
   {
     producto: "Serie 71",
     apertura: "Puertas y mampara",
     vidrio: "Crudo colores. Laminado de 6 mm",
     colores: ["natural", "negro", "blanco"],
-    images: proyectos(["project1.jpg", "project16.jpg", "project17.jpg", "project18.jpg"]),
+    images: servicios(["img6.png"]),
   },
 ];
 
@@ -582,7 +578,7 @@ export default function VariedadesAluminio() {
             onClick={() => setOpenSerie(null)}
           >
             <div
-              className="relative w-full max-w-4xl max-h-full"
+              className="relative w-full max-w-4xl h-[70vh]"
               onClick={(e) => e.stopPropagation()}
             >
               <Image
