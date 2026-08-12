@@ -119,6 +119,26 @@ export default async function VidrioDetallePage({
               priority
             />
             <Watermark size={120} opacity={0.4} />
+            <a
+              href={`/api/download-watermarked?src=${encodeURIComponent(vidrio.img)}&name=${encodeURIComponent(`${vidrio.slug}_${Date.now()}.jpg`)}`}
+              download
+              className="absolute bottom-4 right-4 inline-flex items-center gap-2 rounded-xl bg-brand/90 hover:bg-brand text-white text-xs font-semibold px-4 py-2.5 transition-colors shadow-lg shadow-black/30 z-10"
+            >
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
+                />
+              </svg>
+              Descargar
+            </a>
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
             <div className="absolute top-6 right-6 w-32 h-32 rounded-full overflow-hidden border-4 border-white/20 shadow-xl">
               <Image

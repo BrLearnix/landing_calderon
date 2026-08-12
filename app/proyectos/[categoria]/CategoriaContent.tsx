@@ -468,6 +468,27 @@ export default function CategoriaContent({
                 quality={100}
               />
               <Watermark size={200} opacity={0.45} />
+              <a
+                href={`/api/download-watermarked?src=${encodeURIComponent(filteredProjects[selectedProj].src)}&name=${encodeURIComponent(`${filteredProjects[selectedProj].name}_${Date.now()}.jpg`)}`}
+                download
+                onClick={(e) => e.stopPropagation()}
+                className="absolute bottom-4 right-4 inline-flex items-center gap-2 rounded-xl bg-brand/90 hover:bg-brand text-white text-xs font-semibold px-4 py-2.5 transition-colors shadow-lg shadow-black/30 z-10"
+              >
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
+                  />
+                </svg>
+                Descargar
+              </a>
             </div>
 
             {/* Next */}
