@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import Watermark from "@/app/components/Watermark";
 import { useEffect, useRef, useState } from "react";
 
 interface Calidad {
@@ -78,6 +79,7 @@ function CalidadCard({
           className="object-cover transition-transform duration-700 group-hover:scale-105"
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
         />
+        <Watermark size={48} opacity={0.35} />
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
         {/* Badge */}

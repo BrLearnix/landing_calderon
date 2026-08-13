@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Watermark from "@/app/components/Watermark";
 
 interface Sistema {
   producto: string;
@@ -247,6 +248,7 @@ export default function VariedadesAluminio() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   priority
                 />
+                <Watermark size={110} opacity={0.35} />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
               </div>
 
@@ -429,6 +431,7 @@ export default function VariedadesAluminio() {
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a2e] via-transparent to-transparent" />
+                    <Watermark size={48} opacity={0.35} />
                     <div className="absolute bottom-3 right-3 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/50 backdrop-blur-sm border border-white/15 text-[11px] font-semibold text-white opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                       <svg
                         className="w-3.5 h-3.5"
@@ -593,6 +596,7 @@ export default function VariedadesAluminio() {
                 sizes="(max-width: 1024px) 100vw, 80vw"
                 quality={100}
               />
+              <Watermark size={160} opacity={0.4} />
             </div>
           </div>
 
