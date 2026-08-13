@@ -26,7 +26,7 @@ const servicios = [
   {
     title: "PVC Termoacústico",
     href: "/servicios/pvc-termoestatico",
-    img: "/img/services/pvc/img1.jpg",
+    img: "/img/services/pvc/mampara/img4.png",
     description:
       "Ventanas y puertas en PVC termoacústico con rotura de puente térmico. Máximo aislamiento térmico y acústico en una amplia gama de colores y acabados.",
     tags: ["Ventanas", "Puertas", "Aislamiento", "Perfiles", "Acabados"],
