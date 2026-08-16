@@ -217,7 +217,7 @@ export default function CalidadVidrioSection({
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-[#f5f5f5]">
+    <section id="calidades-vidrio" ref={sectionRef} className="bg-[#f5f5f5]">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-20 sm:py-28">
         {/* Header */}
         <div

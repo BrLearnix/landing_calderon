@@ -25,7 +25,7 @@ export default async function VidrioDetallePage({
     <div className="min-h-screen pt-20 bg-[#1a1a2e]">
       <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12 py-16 sm:py-20">
         <Link
-          href="/servicios/vidrio"
+          href="/servicios#calidades-vidrio"
           className="inline-flex items-center gap-2 text-gray-500 hover:text-brand font-medium mb-10 transition-colors text-sm group"
         >
           <svg

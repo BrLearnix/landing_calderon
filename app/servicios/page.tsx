@@ -52,7 +52,7 @@ const stats = [
   { valor: "4", etiqueta: "Líneas de servicio" },
   { valor: "100%", etiqueta: "A medida" },
   { valor: "RPT", etiqueta: "Puente térmico" },
-  { valor: "6", etiqueta: "Paletas de color" },
+  { valor: "+10", etiqueta: "Paletas de colores" },
 ];
 
 export default function ServiciosPage() {

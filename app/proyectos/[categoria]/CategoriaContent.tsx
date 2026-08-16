@@ -15,51 +15,51 @@ const allProjects: Project[] = [
   {
     src: "/img/projects/aluminio/image47.png",
     category: "Aluminio",
-    name: "Proyecto Ancón",
+    name: "Proyecto Los Olivos",
     description:
-      "Ventanales y mamparas de aluminio con rotura de puente térmico frente al mar. Acabados naturales que maximizan luz y panorámicas.",
+      "Puertas y ventanas de aluminio de diseño moderno en edificio de departamentos, con perfiles de alta durabilidad.",
   },
   {
     src: "/img/projects/aluminio/image49.png",
     category: "Aluminio",
-    name: "Obra Carabayllo",
+    name: "Obra Jesús María",
     description:
       "Sistema integral de ventanas y puertas corredizas de aluminio para vivienda residencial, priorizando ventilación y luminosidad.",
   },
   {
     src: "/img/projects/aluminio/image50.png",
     category: "Aluminio",
-    name: "Proyecto Los Olivos",
+    name: "Proyecto Carabayllo",
     description:
-      "Puertas y ventanas de aluminio de diseño moderno en edificio de departamentos, con perfiles de alta durabilidad.",
+      "Ventanales y mamparas de aluminio para vivienda en Carabayllo, con perfiles resistentes y acabados de larga duración.",
   },
   {
     src: "/img/projects/pvc/image51.png",
     category: "PVC Termoacústico",
-    name: "Obra PVC",
-    description:
-      "Ventanas termoacústicas de PVC que elevan el confort del hogar, reduciendo ruido y pérdida térmica.",
-  },
-  {
-    src: "/img/projects/pvc/image53.png",
-    category: "PVC Termoacústico",
-    name: "Obra PVC Carabayllo",
-    description:
-      "Ventanas y puertas en PVC para vivienda en Carabayllo, con aislamiento acústico y térmico premium.",
-  },
-  {
-    src: "/img/projects/pvc/image54.png",
-    category: "PVC Termoacústico",
-    name: "Casa Playa Ancón",
+    name: "Casa de Playa Ancón",
     description:
       "Mamparas y ventanas de PVC en casa de playa en Ancón, resistentes a la brisa marina con vidrio laminado.",
   },
   {
-    src: "/img/projects/pvc/image55.png",
+    src: "/img/projects/pvc/image53.png",
     category: "PVC Termoacústico",
     name: "Oficina La Molina",
     description:
       "Cerramientos de PVC para oficina corporativa, garantizando aislamiento acústico y eficiencia energética.",
+  },
+  {
+    src: "/img/projects/pvc/image54.png",
+    category: "PVC Termoacústico",
+    name: "Proyecto Huachipa 1",
+    description:
+      "Ventanas y puertas en PVC para vivienda en Huachipa, con aislamiento acústico y térmico premium.",
+  },
+  {
+    src: "/img/projects/pvc/image55.png",
+    category: "PVC Termoacústico",
+    name: "Casa Miraflores",
+    description:
+      "Ventanas termoacústicas de PVC para vivienda en Miraflores, reduciendo ruido y pérdida térmica.",
   },
   {
     src: "/img/projects/acero/image56.png",
@@ -71,7 +71,7 @@ const allProjects: Project[] = [
   {
     src: "/img/projects/acero/image58.png",
     category: "Acero Inoxidable",
-    name: "Obra Huachipa",
+    name: "Obra Jesús María",
     description:
       "Barandas y pasamanos de acero inoxidable para escaleras y áreas exteriores, con acabados pulidos de larga vida.",
   },
