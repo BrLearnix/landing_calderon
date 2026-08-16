@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Watermark from "@/app/components/Watermark";
 
 interface Sistema {
   producto: string;
@@ -35,21 +34,21 @@ const sistemas: Sistema[] = [
     apertura: "Corrediza, batiente y oscilobatiente",
     vidrio: "Laminado de 6 y 8 mm + insulado",
     colores: ["blanco", "negro", "antracita", "gris aluminio", "gris mate", "roble dorado"],
-    images: mampara(["img1.png", "img4.png", "img6.jpeg"]),
+    images: mampara(["img1.png", "img2.png", "img3.png"]),
   },
   {
     producto: "Puerta",
     apertura: "Batiente",
     vidrio: "Laminado de 6 y 8 mm + insulado",
     colores: ["blanco", "negro", "antracita", "gris aluminio", "gris mate", "roble dorado"],
-    images: puerta(["img2.jpg", "img3.jpg", "img4.jpg", "img5.jpg", "img6.png", "img7.png"]),
+    images: puerta(["img1.png", "img2.png", "img3.png", "img4.png", "img5.png"]),
   },
   {
     producto: "Ventana",
     apertura: "Corrediza, batiente y oscilobatiente",
     vidrio: "Laminado de 6 y 8 mm + insulado",
     colores: ["blanco", "negro", "antracita", "gris aluminio", "gris mate", "roble dorado"],
-    images: ventana(["img1.jpg", "img2.png", "img3.png", "img4.png", "img5.png"]),
+    images: ventana(["img1.png", "img2.png", "img3.png", "img4.png", "img5.png"]),
   },
 ];
 
@@ -209,14 +208,13 @@ export default function VariedadesPVC() {
 
               <div className="relative aspect-[4/3] rounded-[1.75rem] overflow-hidden border border-white/10 shadow-2xl shadow-black/50">
                 <Image
-                  src={"/img/services/pvc/mampara/img4.png"}
+                  src={"/img/services/pvc/mampara/img1.png"}
                   alt="Sistema de PVC Termoacústico"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   priority
                 />
-                <Watermark size={110} opacity={0.35} />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
               </div>
 
@@ -399,7 +397,6 @@ export default function VariedadesPVC() {
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a2e] via-transparent to-transparent" />
-                    <Watermark size={48} opacity={0.35} />
                     <div className="absolute bottom-3 right-3 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/50 backdrop-blur-sm border border-white/15 text-[11px] font-semibold text-white opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                       <svg
                         className="w-3.5 h-3.5"
@@ -564,7 +561,6 @@ export default function VariedadesPVC() {
                 sizes="(max-width: 1024px) 100vw, 80vw"
                 quality={100}
               />
-              <Watermark size={160} opacity={0.4} />
             </div>
           </div>
 

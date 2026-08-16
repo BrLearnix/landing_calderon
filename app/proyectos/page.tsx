@@ -1,29 +1,28 @@
 import Image from "next/image";
-import Watermark from "@/app/components/Watermark";
 
 const projectCategories = [
   {
     title: "Sistemas en Aluminio de Alta Gama",
     slug: "aluminio",
-    image: "/img/projects/aluminio/proyecto-ancon.jpg",
+    image: "/img/projects/aluminio/image47.png",
     description: "Ventanas, puertas, mamparas y fachadas de aluminio con rotura de puente térmico.",
   },
   {
     title: "PVC Termoacústico",
     slug: "pvc-termoacustico",
-    image: "/img/projects/pvc/obra-pvc.jpg",
+    image: "/img/projects/pvc/image51.png",
     description: "Ventanas y puertas en PVC con aislamiento térmico y acústico premium.",
   },
   {
     title: "Acero Inoxidable",
     slug: "acero-inoxidable",
-    image: "/img/projects/acero/obra-balcon-vidrio-templado.jpg",
+    image: "/img/projects/acero/image56.png",
     description: "Barandas, pasamanos, cocinas y escaleras en acero inoxidable.",
   },
   {
     title: "Puerta de Ducha",
     slug: "puerta-de-ducha",
-    image: "/img/projects/ducha/ducha-moderno.jpg",
+    image: "/img/projects/ducha/image59.png",
     description: "Puertas de ducha con perfiles de aluminio y vidrio templado.",
   },
 ];
@@ -60,7 +59,6 @@ export default function ProyectosPage() {
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <Watermark size={56} opacity={0.35} />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
               <div className="absolute inset-0 bg-brand/0 group-hover:bg-brand/10 transition-colors duration-300" />
               <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">

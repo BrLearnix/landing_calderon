@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Watermark from "@/app/components/Watermark";
 
 interface Sistema {
   producto: string;
@@ -34,11 +33,10 @@ const sistemas: Sistema[] = [
     vidrio: "Crudo colores. Laminado de 6 y 8 mm",
     colores: ["negro", "natural", "madera"],
     images: servicios([
-      "e-clasica.png",
-      "e-clasica(1).png",
-      "e-clasica(2).png",
-      "e-clasica(3).png",
-      "e-clasica(4).png",
+      "clasica/image1.jpeg",
+      "clasica/image2.png",
+      "clasica/image3.png",
+      "clasica/image4.png",
     ]),
   },
   {
@@ -46,7 +44,7 @@ const sistemas: Sistema[] = [
     apertura: "Ventana corrediza",
     vidrio: "Crudo colores. Laminado de 6 mm",
     colores: ["natural", "negro", "blanco"],
-    images: servicios(["serie-20.jpg", "img1.jpg"]),
+    images: servicios(["serie_20/serie-20.jpg"]),
   },
   {
     producto: "Serie 25",
@@ -54,10 +52,11 @@ const sistemas: Sistema[] = [
     vidrio: "Crudo colores, templado y laminado de 6 y 8 mm",
     colores: ["natural", "negro", "blanco", "madera"],
     images: servicios([
-      "serie-25.jpg",
-      "serie-25.png",
-      "serie-25(1).png",
-      "serie-25(2).jpg",
+      "serie_25/serie-25.jpg",
+      "serie_25/serie-25.png",
+      "serie_25/serie-25(1).png",
+      "serie_25/serie-25(2).jpg",
+      "serie_25/serie-25(3).jpg",
     ]),
   },
   {
@@ -65,35 +64,40 @@ const sistemas: Sistema[] = [
     apertura: "Ventana proyectante",
     vidrio: "Crudo colores. Laminado de 6 mm",
     colores: ["natural", "negro", "blanco"],
-    images: servicios(["serie-42.png", "img2.jpg"]),
+    images: servicios(["serie_42/serie-42.png"]),
   },
   {
     producto: "Serie 62",
     apertura: "Ventana y mampara corredizas",
     vidrio: "Crudo colores. Laminado de 6 y 8 mm",
     colores: ["natural", "negro", "blanco"],
-    images: servicios(["serie-62.png", "serie-60.png", "img3.jpg"]),
+    images: servicios(["serie_62/serie-62.png"]),
   },
   {
     producto: "Serie 80",
     apertura: "Mampara",
     vidrio: "Crudo colores, laminado de 6 y 8 mm e insulado",
     colores: ["natural", "negro", "blanco", "madera", "grafito"],
-    images: servicios(["serie-80.png", "img4.jpg"]),
+    images: servicios([
+      "serie_80/image1.png",
+      "serie_80/image2.png",
+      "serie_80/image3.png",
+      "serie_80/image4.png",
+    ]),
   },
   {
     producto: "Serie 35",
     apertura: "Puerta y mampara",
     vidrio: "Crudo colores. Laminado de 6 mm",
     colores: ["natural", "negro", "blanco"],
-    images: servicios(["img5.jpg"]),
+    images: servicios(["serie_35/img1.png", "serie_35/img2.png"]),
   },
   {
     producto: "Serie 71",
     apertura: "Puertas y mampara",
     vidrio: "Crudo colores. Laminado de 6 mm",
     colores: ["natural", "negro", "blanco"],
-    images: servicios(["img6.png"]),
+    images: servicios(["serie_71/image23.png"]),
   },
 ];
 
@@ -209,7 +213,7 @@ export default function VariedadesAluminio() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src={"/img/services/aluminio/img1.jpg"}
+            src={"/img/services/aluminio/serie_80/image1.png"}
             alt=""
             fill
             className="object-cover"
@@ -241,14 +245,13 @@ export default function VariedadesAluminio() {
 
               <div className="relative aspect-[4/3] rounded-[1.75rem] overflow-hidden border border-white/10 shadow-2xl shadow-black/50">
                 <Image
-                  src={"/img/services/aluminio/img2.jpg"}
+src={"/img/services/aluminio/serie_80/image2.png"}
                   alt="Sistema en Aluminio de Alta Gama"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   priority
                 />
-                <Watermark size={110} opacity={0.35} />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
               </div>
 
@@ -431,7 +434,6 @@ export default function VariedadesAluminio() {
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a2e] via-transparent to-transparent" />
-                    <Watermark size={48} opacity={0.35} />
                     <div className="absolute bottom-3 right-3 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/50 backdrop-blur-sm border border-white/15 text-[11px] font-semibold text-white opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                       <svg
                         className="w-3.5 h-3.5"
@@ -596,7 +598,6 @@ export default function VariedadesAluminio() {
                 sizes="(max-width: 1024px) 100vw, 80vw"
                 quality={100}
               />
-              <Watermark size={160} opacity={0.4} />
             </div>
           </div>
 

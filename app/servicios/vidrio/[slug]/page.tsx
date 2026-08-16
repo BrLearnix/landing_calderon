@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import Watermark from "@/app/components/Watermark";
 import { calidades } from "../data";
 import { notFound } from "next/navigation";
 
@@ -118,7 +117,6 @@ export default async function VidrioDetallePage({
               quality={100}
               priority
             />
-            <Watermark size={120} opacity={0.4} />
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
             <div className="absolute top-6 right-6 w-32 h-32 rounded-full overflow-hidden border-4 border-white/20 shadow-xl">
               <Image
@@ -153,7 +151,6 @@ export default async function VidrioDetallePage({
                     sizes="(max-width: 640px) 100vw, 33vw"
                     quality={100}
                   />
-                  <Watermark size={48} opacity={0.35} />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-5">
                     <h3 className="text-lg font-bold text-white group-hover:text-brand transition-colors duration-200">

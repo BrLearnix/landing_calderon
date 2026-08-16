@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import Watermark from "@/app/components/Watermark";
 
 const backgrounds = [
   "/img/backgrounds/background1.jpg",
@@ -134,7 +133,7 @@ const projectCategories = [
   {
     title: "Sistemas en Aluminio de Alta Gama",
     slug: "aluminio",
-    image: "/img/projects/aluminio/proyecto-ancon.jpg",
+    image: "/img/projects/aluminio/image47.png",
     description:
       "Ventanas, puertas, mamparas y fachadas de aluminio con rotura de puente térmico.",
     count: 3,
@@ -142,7 +141,7 @@ const projectCategories = [
   {
     title: "PVC Termoacústico",
     slug: "pvc-termoacustico",
-    image: "/img/projects/pvc/obra-pvc.jpg",
+    image: "/img/projects/pvc/image51.png",
     description:
       "Ventanas y puertas en PVC con aislamiento térmico y acústico premium.",
     count: 4,
@@ -150,17 +149,17 @@ const projectCategories = [
   {
     title: "Acero Inoxidable",
     slug: "acero-inoxidable",
-    image: "/img/projects/acero/obra-balcon-vidrio-templado.jpg",
+    image: "/img/projects/acero/image56.png",
     description:
       "Barandas, pasamanos, cocinas y escaleras en acero inoxidable.",
-    count: 3,
+    count: 2,
   },
   {
     title: "Puerta de Ducha",
     slug: "puerta-de-ducha",
-    image: "/img/projects/ducha/ducha-moderno.jpg",
+    image: "/img/projects/ducha/image59.png",
     description: "Puertas de ducha con perfiles de aluminio y vidrio templado.",
-    count: 6,
+    count: 4,
   },
 ];
 
@@ -216,7 +215,7 @@ export default function Home() {
                 <br />
                 con <span className="text-brand">calidad</span>{" "}
                 <span className="text-white">y</span>{" "}
-                <span className="text-brand">presicion</span>
+                <span className="text-brand">precisión</span>
               </h1>
               <p className="text-base sm:text-lg text-gray-400 max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
                 Especialistas en la instalación de soluciones en PVC
@@ -359,7 +358,6 @@ export default function Home() {
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <Watermark size={56} opacity={0.35} />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                 <div className="absolute inset-0 bg-brand/0 group-hover:bg-brand/10 transition-colors duration-300" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
@@ -493,14 +491,13 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-tr from-brand/30 via-transparent to-brand/10 z-10 mix-blend-overlay" />
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 z-10" />
                     <Image
-                      src={"/img/about/modelo4.jpg"}
+                      src={"/img/about/nosotros.png"}
                       alt="Calderon Group S.A.C"
                       width={500}
                       height={500}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[20%] contrast-110 brightness-95"
                     />
-                    <Watermark size={120} opacity={0.4} className="z-10" />
-                  </div>
+                    </div>
                 </div>
               </div>
             </div>
@@ -514,7 +511,7 @@ export default function Home() {
                 <h3 className="text-xl font-bold text-gray-900">Misión</h3>
               </div>
               <p className="text-gray-500 leading-relaxed">
-                Ofrecer soluciones arquitectónicas en PVC termoacústica,
+                Ofrecemos soluciones arquitectónicas en PVC termoacústica,
                 aluminio, vidrio y acero inoxidable, garantizando calidad,
                 innovación y un servicio personalizado que genere valor y
                 satisfacción en cada proyecto.

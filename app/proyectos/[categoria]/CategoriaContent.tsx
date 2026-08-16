@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import Watermark from "@/app/components/Watermark";
 
 interface Project {
   src: string;
@@ -14,116 +13,95 @@ interface Project {
 
 const allProjects: Project[] = [
   {
-    src: "/img/projects/aluminio/proyecto-ancon.jpg",
+    src: "/img/projects/aluminio/image47.png",
     category: "Aluminio",
     name: "Proyecto Ancón",
     description:
       "Ventanales y mamparas de aluminio con rotura de puente térmico frente al mar. Acabados naturales que maximizan luz y panorámicas.",
   },
   {
-    src: "/img/projects/aluminio/obra-carabayllo.jpg",
+    src: "/img/projects/aluminio/image49.png",
     category: "Aluminio",
     name: "Obra Carabayllo",
     description:
       "Sistema integral de ventanas y puertas corredizas de aluminio para vivienda residencial, priorizando ventilación y luminosidad.",
   },
   {
-    src: "/img/projects/aluminio/proyecto-los-olivos.png",
+    src: "/img/projects/aluminio/image50.png",
     category: "Aluminio",
     name: "Proyecto Los Olivos",
     description:
       "Puertas y ventanas de aluminio de diseño moderno en edificio de departamentos, con perfiles de alta durabilidad.",
   },
   {
-    src: "/img/projects/pvc/obra-pvc.jpg",
+    src: "/img/projects/pvc/image51.png",
     category: "PVC Termoacústico",
     name: "Obra PVC",
     description:
       "Ventanas termoacústicas de PVC que elevan el confort del hogar, reduciendo ruido y pérdida térmica.",
   },
   {
-    src: "/img/projects/pvc/obra-pvc-carabayllo.jpg",
+    src: "/img/projects/pvc/image53.png",
     category: "PVC Termoacústico",
     name: "Obra PVC Carabayllo",
     description:
       "Ventanas y puertas en PVC para vivienda en Carabayllo, con aislamiento acústico y térmico premium.",
   },
   {
-    src: "/img/projects/pvc/casa-playa-ancon.png",
+    src: "/img/projects/pvc/image54.png",
     category: "PVC Termoacústico",
     name: "Casa Playa Ancón",
     description:
       "Mamparas y ventanas de PVC en casa de playa en Ancón, resistentes a la brisa marina con vidrio laminado.",
   },
   {
-    src: "/img/projects/pvc/oficina-la-molina.png",
+    src: "/img/projects/pvc/image55.png",
     category: "PVC Termoacústico",
     name: "Oficina La Molina",
     description:
       "Cerramientos de PVC para oficina corporativa, garantizando aislamiento acústico y eficiencia energética.",
   },
   {
-    src: "/img/projects/acero/obra-balcon-vidrio-templado.jpg",
+    src: "/img/projects/acero/image56.png",
     category: "Acero Inoxidable",
     name: "Balcón Vidrio Templado",
     description:
       "Baranda de acero inoxidable con vidrio templado para balcón: seguridad, elegancia y vista panorámica despejada.",
   },
   {
-    src: "/img/projects/acero/obra-huachipa.jpg",
+    src: "/img/projects/acero/image58.png",
     category: "Acero Inoxidable",
     name: "Obra Huachipa",
     description:
       "Barandas y pasamanos de acero inoxidable para escaleras y áreas exteriores, con acabados pulidos de larga vida.",
   },
   {
-    src: "/img/projects/acero/obra-jesus-maria.png",
-    category: "Acero Inoxidable",
-    name: "Obra Jesús María",
-    description:
-      "Estructuras y barandas en acero inoxidable de alta durabilidad para proyecto residencial en Jesús María.",
-  },
-  {
-    src: "/img/projects/ducha/ducha-moderno.jpg",
+    src: "/img/projects/ducha/image59.png",
     category: "Puerta de Ducha",
     name: "Ducha Moderna",
     description:
       "Puerta de ducha fija en vidrio templado con perfil de aluminio. Diseño minimalista para baño moderno.",
   },
   {
-    src: "/img/projects/ducha/ducha-puerta-corrediso.jpg",
+    src: "/img/projects/ducha/image60.png",
     category: "Puerta de Ducha",
     name: "Ducha Puerta Corrediza",
     description:
       "Puerta de ducha corrediza en vidrio templado que optimiza el espacio del baño con perfiles de aluminio.",
   },
   {
-    src: "/img/projects/ducha/obra-los-girasoles.jpg",
+    src: "/img/projects/ducha/image61.png",
     category: "Puerta de Ducha",
     name: "Obra Los Girasoles",
     description:
       "Puertas de ducha en vidrio templado para proyecto residencial, con instalación profesional y acabados impecables.",
   },
   {
-    src: "/img/projects/ducha/proyecto-miraflores.jpg",
+    src: "/img/projects/ducha/image62.png",
     category: "Puerta de Ducha",
     name: "Proyecto Miraflores",
     description:
       "Puertas de ducha de alta gama en departamento de Miraflores, con vidrio templado y perfiles de aluminio.",
-  },
-  {
-    src: "/img/projects/ducha/puerta-fija.jpg",
-    category: "Puerta de Ducha",
-    name: "Puerta Fija",
-    description:
-      "Puerta fija de ducha en vidrio templado, sobria y elegante, con instalación precisa y perfiles de aluminio.",
-  },
-  {
-    src: "/img/projects/ducha/vidrio-templado.jpg",
-    category: "Puerta de Ducha",
-    name: "Vidrio Templado",
-    description:
-      "Cerramiento de ducha en vidrio templado de seguridad, garantizando resistencia y una estética limpia y luminosa.",
   },
 ];
 
@@ -135,24 +113,24 @@ const categoryData: Record<
     title: "Sistemas en Aluminio de Alta Gama",
     description:
       "Ventanas, puertas, mamparas y fachadas de aluminio con rotura de puente térmico.",
-    image: "/img/projects/aluminio/proyecto-ancon.jpg",
+    image: "/img/projects/aluminio/image47.png",
   },
   "pvc-termoacustico": {
     title: "PVC Termoacústico",
     description:
       "Ventanas y puertas en PVC con aislamiento térmico y acústico premium.",
-    image: "/img/projects/pvc/obra-pvc.jpg",
+    image: "/img/projects/pvc/image51.png",
   },
   "acero-inoxidable": {
     title: "Acero Inoxidable",
     description:
       "Barandas, pasamanos, cocinas y escaleras en acero inoxidable.",
-    image: "/img/projects/acero/obra-balcon-vidrio-templado.jpg",
+    image: "/img/projects/acero/image56.png",
   },
   "puerta-de-ducha": {
     title: "Puerta de Ducha",
     description: "Puertas de ducha con perfiles de aluminio y vidrio templado.",
-    image: "/img/projects/ducha/ducha-moderno.jpg",
+    image: "/img/projects/ducha/image59.png",
   },
 };
 
@@ -332,10 +310,7 @@ export default function CategoriaContent({
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
-              <Watermark size={48} opacity={0.35} />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent transition-opacity duration-500" />
-
-              {/* Bottom content */}
               <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
                 <div className="transform transition-transform duration-500 group-hover:-translate-y-1">
                   <p className="text-white font-bold text-lg leading-snug mb-1.5">
@@ -467,10 +442,7 @@ export default function CategoriaContent({
                 sizes="(max-width: 1024px) 100vw, 80vw"
                 quality={100}
               />
-              <Watermark size={200} opacity={0.45} />
             </div>
-
-            {/* Next */}
             <button
               onClick={(e) => {
                 e.stopPropagation();
